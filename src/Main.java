@@ -33,7 +33,7 @@ public class Main {
 			code.add(tokensWords);
 		}
 		sc.close();
-	
+
 	}
 
 	

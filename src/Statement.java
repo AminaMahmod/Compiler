@@ -1,4 +1,3 @@
-
 public class Statement {
 
 	private Statement stmt ;
@@ -28,5 +27,4 @@ public class Statement {
 		else
 			return false;
 	}
-
 }

@@ -1,6 +1,5 @@
 public class If_Statement extends Statement
 {
-	
 	private Expression exp ;
 	private Statement stmt ;
 	private ElsePart ePart ;
