@@ -4,10 +4,71 @@ public class Expression
 	public Expression s;
 	public Identifier id;
 	public NewPart np;
+	public static String type;
+	public int integer;
+	public float flt;
 	
-	public String prettyPrint() {
+	public Expression(ExpressionFinal f,Expression s,Identifier id,NewPart np,int integer,float flt)
 	
-		return null;
+	{
+			this.f=f;
+			this.s=s;
+			this.id=id;
+			this.np=np;
+			this.integer=integer;
+			this.flt=flt;
+	}
+	public void prettyPrint() {
+	
+		if(type=="this")
+		{	
+			System.out.println("this");
+			f.prettyPrint();
+		}
+		else if(type=="id")
+		{
+			id.prettyPrint();
+			f.prettyPrint();
+		}
+		else if(type=="false")
+		{
+			System.out.println("false");
+			f.prettyPrint();
+		}
+		else if (type=="true")
+		{
+			System.out.println("true");
+			f.prettyPrint();
+		}
+		else if(type=="int")
+		{
+			System.out.println(integer);
+			f.prettyPrint();
+		}
+		else if (type=="float")
+		{
+			System.out.println(flt);
+			f.prettyPrint();
+		}
+		else if (type=="expln")
+		{
+			System.out.println("!");
+			s.prettyPrint();
+			f.prettyPrint();
+		}
+		else if (type=="aqwas")
+		{
+			System.out.println("(");
+			s.prettyPrint();
+			System.out.println(")");
+			f.prettyPrint();
+		}
+		else if(type=="new")
+		{
+			System.out.println("new");
+			np.prettyPrint();
+			f.prettyPrint();
+		}
 		
 	}
 
@@ -17,12 +78,15 @@ public class Expression
 				{
 					Main.index++;
 					if(f.parse())
+						{
+						type="this";
 						return true;
+						}
 				}
 		
 		else if(id.parse()&& f.parse())
 		{
-		
+				type="id";
 				return true;
 			
 		}
@@ -31,6 +95,7 @@ public class Expression
 			Main.index++;
 			if(f.parse())
 			{
+				type="false";
 				return true;
 			}
 		}
@@ -39,6 +104,7 @@ public class Expression
 			Main.index++;
 			if(f.parse())
 			{
+				type="true";
 				return true;
 			}
 		}
@@ -47,6 +113,7 @@ public class Expression
 			Main.index++;
 			if(f.parse())
 			{
+				type="int";
 				return true;
 			}
 		}
@@ -55,6 +122,7 @@ public class Expression
 			Main.index++;
 			if(f.parse())
 			{
+				type="float";
 				return true;
 			}
 		}
@@ -64,6 +132,7 @@ public class Expression
 			Main.index++;
 			if(s.parse()&& f.parse())
 			{
+					type="expln";
 					return true;
 			}
 			
@@ -77,7 +146,8 @@ public class Expression
 				{
 					Main.index++;
 					if(f.parse())
-					{
+					{	
+						type="aqwas";
 						return true;
 					}
 				}
@@ -88,6 +158,7 @@ public class Expression
 			Main.index++;
 			if(np.parse()&&f.parse())
 			{
+				type="new";
 				return true;
 			}
 		}

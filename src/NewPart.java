@@ -6,4 +6,8 @@ public class NewPart {
 	{
 		return false;
 	}
+
+	public void prettyPrint() {
+		
+	}
 }

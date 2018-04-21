@@ -6,7 +6,9 @@ public class ExpressionFinal {
 	
 	public void prettyPrint()
 	{
-		
+		if(part!=null)
+		{part.prettyPrint();
+		f.prettyPrint();}
 	}
 	
 	public boolean parse()
