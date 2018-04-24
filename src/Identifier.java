@@ -18,7 +18,8 @@ public class Identifier
 	}
 
 	public void prettyPrint() {
-		System.out.print( id);
+		
+		System.out.println(" "+id);
 	}
 
 }
