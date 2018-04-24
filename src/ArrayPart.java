@@ -2,7 +2,7 @@
 public class ArrayPart {
 
 	public void prettyPrint() {
-		// TODO Auto-generated method stub
+		System.out.print("[]");
 		
 	}
 

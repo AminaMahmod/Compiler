@@ -3,6 +3,16 @@ public class WhileStatement extends Statement
 	private Expression exp ;
 	private Statement stmt ;
 
+	public WhileStatement() {
+		super();
+	}
+
+	public WhileStatement(Expression exp, Statement stmt) {
+		super();
+		this.exp = exp;
+		this.stmt = stmt;
+	}
+
 	public boolean parse() 
 	{
 		if (Main.code.get(Main.index).get(1).equals("("))

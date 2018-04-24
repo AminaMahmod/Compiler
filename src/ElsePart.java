@@ -1,5 +1,10 @@
 public class ElsePart 
 {
+	public ElsePart(Statement stmt) {
+		super();
+		this.stmt = stmt;
+	}
+
 	private Statement stmt ; 
 	
 	public void prettyPrint() {

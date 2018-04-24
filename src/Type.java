@@ -7,6 +7,18 @@ public class Type
 	private static ArrayList<String> types = new ArrayList<>();
 	
 	
+	public Type(String dataType, ArrayPart arrPart) {
+		super();
+		this.dataType = dataType;
+		this.arrPart = arrPart;
+		types.add("<STRING>");
+		types.add("<BOOLEAN>");
+		types.add("<INT>");
+		types.add("<CHARACTER>");
+		types.add("<FLOAT>");
+	}
+
+
 	Type()
 	{
 		types.add("<STRING>");
@@ -21,7 +33,8 @@ public class Type
 	public void prettyPrint()
 	{
 		System.out.print(dataType);
-		arrPart.prettyPrint();
+		if (arrPart != null)
+			arrPart.prettyPrint();
 	}
 	
 	public boolean parse()

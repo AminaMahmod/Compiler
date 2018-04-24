@@ -2,6 +2,11 @@ public class IndexPart
 {
 	private Expression exp ;
 	
+	public IndexPart(Expression exp) {
+		super();
+		this.exp = exp;
+	}
+
 	public void prettyPrint() {
 		if (exp != null)
 		{

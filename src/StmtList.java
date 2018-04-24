@@ -3,6 +3,12 @@ public class StmtList
 	private Statement stmt ;
 	private StmtList list ;
 	
+	public StmtList(Statement stmt, StmtList list) {
+		super();
+		this.stmt = stmt;
+		this.list = list;
+	}
+
 	public void prettyPrint() 
 	{
 		if (stmt == null)

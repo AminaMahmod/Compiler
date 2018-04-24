@@ -4,6 +4,17 @@ public class If_Statement extends Statement
 	private Statement stmt ;
 	private ElsePart ePart ;
 	
+	public If_Statement() {
+		super();
+	}
+
+	public If_Statement(Expression exp, Statement stmt, ElsePart ePart) {
+		super();
+		this.exp = exp;
+		this.stmt = stmt;
+		this.ePart = ePart;
+	}
+
 	public boolean parse() 
 	{
 		if (Main.code.get(Main.index).get(1).equals("("))
@@ -26,7 +37,7 @@ public class If_Statement extends Statement
 		}
 		return false;
 	}
-	
+
 	public void prettyPrint()
 	{
 		System.out.print("if ( ");

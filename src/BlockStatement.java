@@ -2,6 +2,15 @@ public class BlockStatement  extends Statement
 {
 	private StmtList stmtList ;
 	
+	public BlockStatement() {
+		super();
+	}
+	
+	public BlockStatement(StmtList stmtList) {
+		super();
+		this.stmtList = stmtList;
+	}
+
 	public boolean parse() 
 	{
 		if (stmtList.parse())

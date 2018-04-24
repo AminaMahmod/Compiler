@@ -4,6 +4,17 @@ public class AssignmentStatement extends Statement
 	private IndexPart index ;
 	private Expression exp ;
 	
+	public AssignmentStatement() {
+		super();
+	}
+		
+	public AssignmentStatement(Identifier id, IndexPart index, Expression exp) {
+		super();
+		this.id = id;
+		this.index = index;
+		this.exp = exp;
+	}
+
 	public boolean parse() 
 	{
 		if (index.parse())

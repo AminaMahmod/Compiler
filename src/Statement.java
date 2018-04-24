@@ -4,7 +4,6 @@ public class Statement {
 	
 	public void prettyPrint() {
 		stmt.prettyPrint(); 
-
 	}
 
 	public boolean parse() 
