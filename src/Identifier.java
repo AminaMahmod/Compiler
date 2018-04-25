@@ -1,6 +1,6 @@
 public class Identifier 
 {
-	String id ;
+	static String id ;
 	
 	public Identifier(String id) {
 		super();

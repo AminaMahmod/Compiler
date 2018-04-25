@@ -1,18 +1,39 @@
 public class VariableDeclaration {
-	public static Type type;
-	public static Identifier id;
-	public static VariableDeclaration var;
+	private Type type;
+	private  Identifier id;
+	private  VariableDeclaration var;
 
-	public boolean parse() {
-		// if (type.parse() == true && id.parse()) {
-		// if (Main.input.next.equal(";")) {
-		// if (var.parse()==true) {
-		//
-		// }
-		// }
-		// }
-
-		return false;
+	public VariableDeclaration(Type type, Identifier id, VariableDeclaration var) {
+		super();
+		this.type = type;
+		this.id = id;
+		this.var=var;
 	}
 
+	public boolean parse() {
+		if (type.parse() == true) {
+			if (id.parse() == true) {
+				if (Main.code.get(Main.index).get(1).equals(";")) {
+					Main.index++;
+					if(var.parse()==true){
+						return true;
+					}
+				}
+			}
+		}
+		return false ;
+	}
+	
+	public void prettyPrint()
+	{
+		if(type != null){
+			type.prettyPrint();
+			id.prettyPrint();
+			System.out.println(";");
+			var.prettyPrint();
+		}
+		else
+			System.out.println(" ");
+	}
+	
 }
