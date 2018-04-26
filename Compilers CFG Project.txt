@@ -1,0 +1,70 @@
+Goal -> MainClass OtherClasses EOF
+OtherClasses -> ClassDeclaration OtherClasses | epsilon
+MainClass -> "class" Identifier "{" "public" "static" "void" "main" "(" "String" "[" "]" Identifier ")" "{" Statement "}" "}" 
+ClassDeclaration -> "class" Identifier ExtendsPart ClassBody
+ExtendsPart -> "extends" Identifier | epsilon
+ClassBody -> "{" VariableDeclaration ConstructorDeclaration MethodDeclaration "}"
+
+
+
+
+
+/*SARAAAAAAAAAAAAAAA3*/
+
+VariableDeclaration -> Type Identifier ";" VariableDeclaration | epsilon
+ConstructorDeclaration -> Identifier "(" Parameters ")" "{" Body "}"
+Parameters -> Type Identifier OtherParameters
+OtherParameters -> "," Parameters | epsilon
+Body -> VariableDeclaration BodyStatement
+BodyStatement -> Statement BodyStatement | epsilon 
+MethodDeclaration -> AccessModifier Type Identifier "(" Parameters ")" "{" Body "return" Expression ";" "}"
+AccessModifier -> public | private | protected
+
+
+
+
+/*RANDAAAAAAAAAAAA3*/
+Type -> DataType ArrayPart
+ArrayPart -> "[" "]" | epsilon
+DataType -> int | char | boolean | String | float
+
+Statement -> "{" StmtList "}" |
+			 "if" "(" Expression ")" Statement ElsePart |
+			 "while" "(" Expression ")" Statement |
+			 "System.out.Println" "(" Expression ")" ";" |
+			 Identifier IndexPart "=" Expression ";"
+			 
+StmtList -> Statement StmtList | epsilon
+ElsePart -> "else" Statement | epsilon
+IndexPart -> "[" Expression "]" | epsilon
+Identifier -> <IDENTIFIER>
+
+
+
+
+
+/*AMINAAAAAAAAAA3*/
+Expression -> "this" ExpressionFinal |
+			  Identifier ExpressionFinal |
+			  "false" ExpressionFinal | 
+			  "true" ExpressionFinal | 
+			  <INTEGER_LITERAL> ExpressionFinal | 
+			  <FLOAT_LITERAL> ExpressionFinal | 
+			  "!" Expression ExpressionFinal |
+			  "(" Expression ")" ExpressionFinal |
+			  "new" NewPart ExpressionFinal
+ExpressionFinal -> ExpressionPart ExpressionFinal | epsilon
+
+
+
+/*MARIAAAAAAA3M*/
+NewPart -> DataType "[" Expression "]" |
+		   Identifier "(" NewExpression ")"
+NewExpression -> Expression OtherExpressions
+OtherExpressions -> "," NewExpression | epsilon
+ExpressionPart -> Operator Expression |
+				  "[" Expression "]" |
+				  "." DotPart
+DotPart -> "length" | Identifier "(" NewExpression ")"
+Operator -> "&&" | "||" | "==" | "!=" | "+" | "-" | "*" | "/"  | ">" Equal | "<" Equal 
+Equal ->  "=" | epsilon

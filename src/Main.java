@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Main {
 
 	public static int index = 0;
-	public static ArrayList<ArrayList<String>> code;
+	public static ArrayList<ArrayList<String>> code = new ArrayList<ArrayList<String>>();
 
 	public static boolean match(String s) {
 		if (code.get(index).get(1).equals(s)) {
@@ -17,6 +17,8 @@ public class Main {
 	}
 
 	public static void main(String[] args) throws FileNotFoundException {
+		
+		// READ THE INPUT FILE -> CLASS : TOKEN
 		File inputFile = new File("input.txt");
 		Scanner sc = null;
 		sc = new Scanner(inputFile);
@@ -33,7 +35,15 @@ public class Main {
 			code.add(tokensWords);
 		}
 		sc.close();
-
+		
+		
+		Goal g = new Goal();
+		System.out.println(g.parse());
+		
+		/*Identifier id = new Identifier() ;
+		System.out.println(id.parse());
+		id.prettyPrint();*/
+		
 	}
 
 	

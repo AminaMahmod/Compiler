@@ -26,7 +26,7 @@ public class AssignmentStatement extends Statement
 				{
 					if (Main.code.get(Main.index).get(1).equals(";"))
 					{
-						Main.index ++ ;
+						Main.index++ ;
 						return true;
 					}
 				}

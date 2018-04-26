@@ -2,18 +2,21 @@ import java.util.ArrayList;
 
 public class Goal {
 
-	private MainClass main;
-	private ArrayList<OtherClasses> classes;
+	private MainClass main = new MainClass();
+	private ArrayList<OtherClasses> classes = new ArrayList<OtherClasses>();
 
 	public boolean parse() {
 		boolean mainClass = main.parse();
 		Main.index++;
 		boolean otherClasses = true;
-		for (int i = 0; i < classes.size(); i++) {
+		//OtherClasses other = new OtherClasses() ;
+		/*while (other.parse()!=null)
+			classes.add(other);
+		/*	for (int i = 0; i < classes.size(); i++) {
 			otherClasses = otherClasses && classes.get(i).parse();
 			Main.index++;
-		}
-		return otherClasses && mainClass && Main.match("EOF");
+		}*/
+		return otherClasses && mainClass;// && Main.match("EOF");
 	}
 
 	public void prettyPrint() {

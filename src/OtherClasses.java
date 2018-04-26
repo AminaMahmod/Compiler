@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class OtherClasses {
-	public ClassDeclaration cd;
+	public ClassDeclaration cd = new ClassDeclaration();
 	public ArrayList<OtherClasses> oc;
 
 	public void prettyPrint() {
@@ -13,17 +13,20 @@ public class OtherClasses {
 		System.out.println(objectWords);
 	}
 
-	public boolean parse() {
-		if (cd.parse() == true) {
-			if (cd.parse() == true) {
-				return false;
+	public OtherClasses parse()
+	{
+		if (cd.parse() == true) 
+		{
+			if (cd.parse() == true) 
+			{
+				return null;
 			}
-		} else if (cd==null) {
-			return true;
-		} else {
-			return false;
+		} 
+		else if (cd==null)
+		{
+			return this;
 		}
-		return false;
+		return null;
 	}
 
 }

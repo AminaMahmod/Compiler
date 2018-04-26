@@ -1,16 +1,21 @@
 public class Identifier 
 {
 	String id ;
-	
+
+	public Identifier() {
+		super();
+	}
+
 	public Identifier(String id) {
 		super();
 		this.id = id;
 	}
-
+	
 	public boolean parse()
 	{
-		if (Main.code.get(Main.index).get(0).equals("<IDENTIFIER>"))
+		if (Main.code.get(Main.index).get(0).equals("<ID>"))
 		{
+			id = Main.code.get(Main.index).get(1);
 			Main.index++;
 			return true;
 		}

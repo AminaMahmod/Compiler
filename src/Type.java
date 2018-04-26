@@ -41,6 +41,7 @@ public class Type
 	{
 		if (types.contains(Main.code.get(Main.index).get(0)))
 		{
+			dataType = Main.code.get(Main.index).get(1);
 			Main.index ++ ;
 			if  (arrPart.parse() || arrPart == null)
 			{

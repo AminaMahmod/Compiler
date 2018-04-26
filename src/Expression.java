@@ -8,6 +8,11 @@ public class Expression
 	public int integer;
 	public float flt;
 	
+	public Expression() {
+		super();
+	}
+
+	
 	public Expression(ExpressionFinal f,Expression s,Identifier id,NewPart np,int integer,float flt)
 	
 	{
@@ -73,8 +78,8 @@ public class Expression
 	}
 
 	public boolean parse() {
-		
-		if(Main.code.get(Main.index).get(1).equals("this"))
+		return true;
+/*		if(Main.code.get(Main.index).get(1).equals("this"))
 				{
 					Main.index++;
 					if(f.parse())
@@ -164,6 +169,6 @@ public class Expression
 		}
 		
 	return false;	
-	}
+	*/}
 
 }

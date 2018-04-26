@@ -18,7 +18,9 @@ public class NewPart {
 	}
 
 	public boolean parse() {
-		if (types.contains(Main.code.get(Main.index).get(1))) {
+		if (types.contains(Main.code.get(Main.index).get(0))) {
+			
+			dataType = Main.code.get(Main.index).get(1);
 			Main.index++;
 			if (Main.code.get(Main.index).get(1).equals("[")) {
 				Main.index++;

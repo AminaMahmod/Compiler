@@ -1,6 +1,6 @@
 public class PrintStatement extends Statement
 {
-	private Expression exp ;
+	private Expression exp = new Expression();
 	
 	public PrintStatement() {
 		super();
@@ -18,7 +18,7 @@ public class PrintStatement extends Statement
 			Main.index ++ ;
 			if (exp.parse())
 			{
-				if (Main.code.get(Main.index).get(1).equals("("))
+				if (Main.code.get(Main.index).get(1).equals(")"))
 				{
 					Main.index ++ ;
 					if (Main.code.get(Main.index).get(1).equals(";"))

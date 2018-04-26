@@ -3,6 +3,7 @@ public class NewExpression {
 
 	private Expression exp;
 	private OtherExpressions otherexp;
+	
 	public boolean parse() {
 		if(exp.parse()==true)
 		{

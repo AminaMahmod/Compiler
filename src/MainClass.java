@@ -1,18 +1,18 @@
 public class MainClass {
-	private Identifier className;
-	private Identifier args;
-	private Statement stmt;
+	private Identifier className = new Identifier();
+	private Identifier args = new Identifier();
+	private Statement stmt = new Statement();
 
 	public boolean parse() {
 		if (Main.code.get(Main.index).get(1).equals("class")) {
 			Main.index++;
-
 			if (className.parse()) {
 				if (Main.code.get(Main.index).get(1).equals("{")) {
 					Main.index++;
-
+					
 					if (Main.code.get(Main.index).get(1).equals("public")) {
 						Main.index++;
+						
 						if (Main.code.get(Main.index).get(1).equals("static")) {
 							Main.index++;
 							if (Main.code.get(Main.index).get(1).equals("void")) {
@@ -28,10 +28,11 @@ public class MainClass {
 												if (Main.code.get(Main.index).get(1).equals("]")) {
 													Main.index++;
 													if (args.parse() == true) {
-														if (Main.code.get(Main.index).get(1).equals("0")) {
+//														if (Main.code.get(Main.index).get(1).equals("0")) {
 															Main.index++;
 															if (Main.code.get(Main.index).get(1).equals("{")) {
 																Main.index++;
+																
 																if (stmt.parse() == true) {
 																	if (Main.code.get(Main.index).get(1).equals("}")) {
 																		Main.index++;
@@ -43,7 +44,7 @@ public class MainClass {
 																	}
 																}
 															}
-														}
+//														}
 													}
 												}
 											}
@@ -56,8 +57,6 @@ public class MainClass {
 					}
 				}
 			}
-		} else {
-			return false;
 		}
 		return false;
 	}

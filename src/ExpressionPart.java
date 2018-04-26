@@ -54,10 +54,4 @@ public class ExpressionPart {
 			dp.prettyPrint();
 		}
 	}
-
-	public void prettyPrint() {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

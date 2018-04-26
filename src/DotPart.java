@@ -5,6 +5,7 @@ public class DotPart {
 
 	private Identifier id;
 	private NewExpression newexp;
+	
 	public boolean parse() {
 		if(Main.code.get(Main.index).get(1).equals("length"))
 		{

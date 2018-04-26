@@ -14,12 +14,13 @@ public class Statement {
 			stmt = new If_Statement();
 		else if (Main.code.get(Main.index).get(1).equals("while"))
 			stmt = new WhileStatement();
-		else if (Main.code.get(Main.index).get(1).equals("System.out.Println"))
+		else if (Main.code.get(Main.index).get(1).equals("System.out.println"))
 			stmt = new PrintStatement();
 		else if (Main.code.get(Main.index).get(0).equals("<IDENTIFIER>"))
 			stmt = new AssignmentStatement();
-
-			
+/*		else
+			return false;
+	*/		
 		Main.index ++ ;
 		if (stmt.parse())
 			return true;
