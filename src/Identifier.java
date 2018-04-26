@@ -1,11 +1,11 @@
 public class Identifier 
 {
-	String id ;
+	private String id ;
 
 	public Identifier() {
 		super();
 	}
-
+	
 	public Identifier(String id) {
 		super();
 		this.id = id;
