@@ -15,6 +15,7 @@ public class MainClass {
 	}
 
 	public boolean parse() {
+		System.out.println("Main class");
 		if (Main.code.get(Main.index).get(1).equals("class")) {
 			className = new Identifier();
 			Main.index++;
@@ -84,7 +85,7 @@ public class MainClass {
 		args.prettyPrint();
 		System.out.println(")\n\t{\t\t" );
 		stmt.prettyPrint(); 
-		System.out.println("\n}");
+		System.out.println("\n}\n}");
 		
 
 	}

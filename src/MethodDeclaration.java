@@ -21,6 +21,7 @@ public class MethodDeclaration {
 	}
 
 	public boolean parse() {
+		System.out.println("Method");
 		if (acsss.parse() == true) {
 			if (type.parse() == true) {
 				if (id.parse() == true) {

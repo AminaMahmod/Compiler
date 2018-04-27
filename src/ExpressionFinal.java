@@ -15,12 +15,14 @@ public class ExpressionFinal {
 	
 	public boolean parse()
 	{
-		if(part.parse()&& f.parse())
-			return true;
+		System.out.println("exp final");
 		if(part==null)
 		{
 			return true;
 		}
+		if(part.parse()&& f.parse())
+			return true;
+		
 		return false;
 		
 	}

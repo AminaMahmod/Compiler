@@ -12,6 +12,7 @@ public class AccessModifier {
 	}
 
 	public boolean parse() {
+		System.out.println("Access Modifiers");
 		if (Main.code.get(Main.index).get(1).equals("public")) {
 			Main.index++;
 			modifier = "public" ;

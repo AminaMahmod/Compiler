@@ -6,6 +6,7 @@ public class ExpressionPart {
 	private DotPart dp;
 
 	public boolean parse() {
+		System.out.println("exp part");
 		if (op.parse() == true) 
 		{
 			if (exp.parse() == true)

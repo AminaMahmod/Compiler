@@ -17,6 +17,7 @@ public class If_Statement extends Statement
 
 	public boolean parse() 
 	{
+		System.out.println("if stmt");
 		if (Main.code.get(Main.index).get(1).equals("("))
 		{
 			Main.index ++ ;

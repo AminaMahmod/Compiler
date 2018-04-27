@@ -1,6 +1,6 @@
 public class Expression 
 {
-	private ExpressionFinal f;
+	private ExpressionFinal f ;
 	private Expression s;
 	private Identifier id;
 	private NewPart np;
@@ -26,7 +26,7 @@ public class Expression
 	
 		if(type=="this")
 		{	
-			System.out.println("this");
+			System.out.print("this");
 			f.prettyPrint();
 		}
 		else if(type=="id")
@@ -36,35 +36,35 @@ public class Expression
 		}
 		else if(type=="false")
 		{
-			System.out.println("false");
+			System.out.print("false");
 			f.prettyPrint();
 		}
 		else if (type=="true")
 		{
-			System.out.println("true");
+			System.out.print("true");
 			f.prettyPrint();
 		}
 		else if(type=="int")
 		{
-			System.out.println(integer);
+			System.out.print(integer);
 			f.prettyPrint();
 		}
 		else if (type=="float")
 		{
-			System.out.println(flt);
+			System.out.print(flt);
 			f.prettyPrint();
 		}
 		else if (type=="expln")
 		{
-			System.out.println("!");
+			System.out.print("!");
 			s.prettyPrint();
 			f.prettyPrint();
 		}
 		else if (type=="aqwas")
 		{
-			System.out.println("(");
+			System.out.print("(");
 			s.prettyPrint();
-			System.out.println(")");
+			System.out.print(")");
 			f.prettyPrint();
 		}
 		else if(type=="new")
@@ -78,6 +78,12 @@ public class Expression
 
 	public boolean parse() 
 	{
+		System.out.println("expression");
+		f = new ExpressionFinal();
+		id = new Identifier() ;
+		np = new NewPart() ;
+		
+		
 		if(Main.code.get(Main.index).get(1).equals("this"))
 		{
 			Main.index++;

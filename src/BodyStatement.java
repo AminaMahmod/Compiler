@@ -9,6 +9,7 @@ public class BodyStatement {
 	}
 	
 	public boolean parse() {
+		System.out.println("body stmt");
 		 if(stmt.parse() == true){
 			 if(bodystmt.parse() == true || bodystmt == null )
 				 return true;

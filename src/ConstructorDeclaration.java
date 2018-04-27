@@ -14,6 +14,7 @@ public class ConstructorDeclaration {
 	}
 
 	public boolean parse() {
+		System.out.println("constructor");
 		if (id.parse() == true) {
 			if (Main.code.get(Main.index).get(1).equals("(")) {
 				Main.index++;

@@ -21,6 +21,7 @@ public class Identifier
 	
 	public boolean parse()
 	{
+		System.out.println("id");
 		if (Main.code.get(Main.index).get(0).equals("<ID>"))
 		{
 			id = Main.code.get(Main.index).get(1);
@@ -32,7 +33,7 @@ public class Identifier
 
 	public void prettyPrint() {
 		
-		System.out.println(" "+id);
+		System.out.print(id);
 	}
 
 }

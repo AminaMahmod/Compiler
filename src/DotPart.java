@@ -7,6 +7,7 @@ public class DotPart {
 	private NewExpression newexp;
 	
 	public boolean parse() {
+		System.out.println("dot");
 		if(Main.code.get(Main.index).get(1).equals("length"))
 		{
 			Main.index++;

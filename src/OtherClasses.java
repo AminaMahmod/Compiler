@@ -1,32 +1,31 @@
-import java.util.ArrayList;
-
 public class OtherClasses {
-	public ClassDeclaration cd = new ClassDeclaration();
-	public ArrayList<OtherClasses> oc;
+	private ClassDeclaration cd ;
+	private OtherClasses others ;
 
 	public void prettyPrint() {
-		String objectWords = "";
-		for (int i = 0; i < oc.size(); i++) {
-			objectWords += oc.get(i);
+		
+		if (cd != null)
+		{
+			cd.prettyPrint();
+			if (others != null)
+				others.prettyPrint();
 		}
-		cd.prettyPrint();
-		System.out.println(objectWords);
+			
 	}
 
-	public OtherClasses parse()
+	public boolean parse()
 	{
-		if (cd.parse() == true) 
+		System.out.println("other classes");
+		if (cd==null)
 		{
-			if (cd.parse() == true) 
-			{
-				return null;
-			}
-		} 
-		else if (cd==null)
-		{
-			return this;
+			return true;
 		}
-		return null;
+		if (cd.parse()) 
+		{
+			if (others.parse() || others == null)
+				return true ;
+		} 
+		return false;
 	}
 
 }

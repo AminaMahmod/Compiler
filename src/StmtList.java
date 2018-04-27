@@ -20,6 +20,7 @@ public class StmtList
 
 	public boolean parse() 
 	{
+		System.out.println("stmt list");
 		if (stmt == null)
 			return true ;
 		else

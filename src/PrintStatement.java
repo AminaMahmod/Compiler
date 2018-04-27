@@ -13,6 +13,7 @@ public class PrintStatement extends Statement
 
 	public boolean parse() 
 	{
+		System.out.println("print stmt");
 		if (Main.code.get(Main.index).get(1).equals("("))
 		{
 			Main.index ++ ;

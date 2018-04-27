@@ -8,6 +8,7 @@ public class OtherParameters {
 	}
 
 	public boolean parse() {
+		System.out.println("other param");
 		if (Main.code.get(Main.index).get(1).equals(",")) {
 			Main.index++;
 			if (par.parse() == true) {

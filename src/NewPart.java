@@ -7,6 +7,7 @@ public class NewPart {
 	private NewExpression newexp;
 	private String dataType;
 	private static ArrayList<String> types = new ArrayList<>();
+	private boolean parsed = false ;
 
 	NewPart() {
 		types.add("<STRING>");
@@ -16,8 +17,12 @@ public class NewPart {
 		types.add("<FLOAT>");
 
 	}
-
+//DataType "[" Expression "]" |
+//Identifier "(" NewExpression ")"
 	public boolean parse() {
+		id = new Identifier();
+		newexp = new NewExpression() ;
+		System.out.println("New Part");
 		if (types.contains(Main.code.get(Main.index).get(0))) {
 			
 			dataType = Main.code.get(Main.index).get(1);
@@ -27,6 +32,7 @@ public class NewPart {
 				if (exp.parse() == true) {
 					if (Main.code.get(Main.index).get(1).equals("]")) {
 						Main.index++;
+						parsed = true ;
 						return true;
 						
 					}
@@ -35,9 +41,10 @@ public class NewPart {
 		} else if (id.parse() == true) {
 			if (Main.code.get(Main.index).get(1).equals("(")) {
 				Main.index++;
-				if (newexp.parse() == true) {
+				if (newexp.parse() == true || newexp == null) {
 					if (Main.code.get(Main.index).get(1).equals(")")) {
 						Main.index++;
+						parsed = true;
 						return true;
 					}
 				}
@@ -48,19 +55,22 @@ public class NewPart {
 
 	public void prettyPrint() {
 
-		if(exp!=null)
+		if (parsed)
 		{
-			System.out.println(dataType);
-			System.out.println("[");
-			exp.prettyPrint();
-			System.out.println("]");
+			if(exp!=null)
+			{
+				System.out.println(dataType);
+				System.out.println("[");
+				exp.prettyPrint();
+				System.out.println("]");
+			}
+			else if(newexp!=null)
+			{
+				id.prettyPrint();
+				System.out.println("(");
+				newexp.prettyPrint();
+				System.out.println(")");
+			}		
 		}
-		else if(newexp!=null)
-		{
-			id.prettyPrint();
-			System.out.println("(");
-			newexp.prettyPrint();
-			System.out.println(")");
-		}		
 	}
 }

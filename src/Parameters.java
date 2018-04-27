@@ -12,6 +12,7 @@ public class Parameters {
 	}
 
 	public boolean parse() {
+		System.out.println("param");
 		if(type.parse() == true){
 			if(id.parse() == true){
 				if(othpar.parse() == true || othpar == null){

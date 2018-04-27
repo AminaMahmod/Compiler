@@ -11,6 +11,7 @@ public class VariableDeclaration {
 	}
 
 	public boolean parse() {
+		System.out.println("var declaration");
 		if (type.parse() == true) {
 			if (id.parse() == true) {
 				if (Main.code.get(Main.index).get(1).equals(";")) {

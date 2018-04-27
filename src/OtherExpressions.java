@@ -5,6 +5,7 @@ public class OtherExpressions {
 	private NewExpression newexp;
 	
 	public boolean parse() {
+		System.out.println("other exp");
 		if(Main.code.get(Main.index).get(1).equals(","))
 		{
 			Main.index++;

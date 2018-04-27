@@ -9,6 +9,7 @@ public class Body {
 	}
 
 	public boolean parse() {
+		System.out.println("body");
 		if (var.parse() == true) {
 			if (bodystmt.parse() == true) {
 				return true;

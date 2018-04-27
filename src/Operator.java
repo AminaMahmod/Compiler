@@ -5,6 +5,7 @@ public class Operator {
 	private String opt;
 	
 	public boolean parse() {
+		System.out.println("operator");
 		if(Main.code.get(Main.index).get(1).equals("&&"))
 		{
 			opt = "&&" ;

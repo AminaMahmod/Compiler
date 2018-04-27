@@ -15,6 +15,7 @@ public class WhileStatement extends Statement
 
 	public boolean parse() 
 	{
+		System.out.println("while stmt");
 		if (Main.code.get(Main.index).get(1).equals("("))
 		{
 			Main.index ++ ;

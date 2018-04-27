@@ -38,7 +38,12 @@ public class Main {
 		
 		
 		Goal g = new Goal();
-		System.out.println(g.parse());
+		if(g.parse())
+		{
+			g.prettyPrint();
+		}
+		else
+			System.out.println("Syntax Error");
 		
 		/*Identifier id = new Identifier() ;
 		System.out.println(id.parse());

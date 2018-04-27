@@ -41,6 +41,7 @@ public class AssignmentStatement extends Statement
 
 	public boolean parse() 
 	{
+		System.out.println("= stmt");
 		id.setId(Main.code.get(Main.index).get(1));
 		if (index.parse())
 		{

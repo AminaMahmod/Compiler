@@ -12,12 +12,12 @@ ClassBody -> "{" VariableDeclaration ConstructorDeclaration MethodDeclaration "}
 /*SARAAAAAAAAAAAAAAA3*/
 
 VariableDeclaration -> Type Identifier ";" VariableDeclaration | epsilon
-ConstructorDeclaration -> Identifier "(" Parameters ")" "{" Body "}"
+ConstructorDeclaration -> Identifier "(" Parameters ")" "{" Body "}" ConstructorDeclaration | epsilon
 Parameters -> Type Identifier OtherParameters
 OtherParameters -> "," Parameters | epsilon
 Body -> VariableDeclaration BodyStatement
 BodyStatement -> Statement BodyStatement | epsilon 
-MethodDeclaration -> AccessModifier Type Identifier "(" Parameters ")" "{" Body "return" Expression ";" "}"
+MethodDeclaration -> AccessModifier Type Identifier "(" Parameters ")" "{" Body "return" Expression ";" "}" MethodDeclaration | epsilon
 AccessModifier -> public | private | protected
 
 
@@ -60,7 +60,7 @@ ExpressionFinal -> ExpressionPart ExpressionFinal | epsilon
 /*MARIAAAAAAA3M*/
 NewPart -> DataType "[" Expression "]" |
 		   Identifier "(" NewExpression ")"
-NewExpression -> Expression OtherExpressions
+NewExpression -> Expression OtherExpressions | epsilon
 OtherExpressions -> "," NewExpression | epsilon
 ExpressionPart -> Operator Expression |
 				  "[" Expression "]" |

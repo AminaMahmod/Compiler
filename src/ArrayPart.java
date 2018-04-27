@@ -7,7 +7,7 @@ public class ArrayPart {
 	}
 
 	public boolean parse() {
-		
+		System.out.println("arr part");
 		if (Main.code.get(Main.index).get(1).equals("["))
 		{
 			Main.index ++ ;

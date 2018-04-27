@@ -8,6 +8,7 @@ public class ElsePart
 	}
 	
 	public void prettyPrint() {
+		System.out.println("else part");
 		if (stmt == null)
 			System.out.print("");
 		else

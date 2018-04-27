@@ -11,6 +11,7 @@ public class ClassBody {
 	}
 
 	public boolean parse() {
+		System.out.println("class body");
 		if (Main.code.get(Main.index).get(1).equals("{")) {
 			Main.index++;
 			if (var.parse() == true && cons.parse() == true && method.parse()) {

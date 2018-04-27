@@ -13,6 +13,7 @@ public class BlockStatement  extends Statement
 
 	public boolean parse() 
 	{
+		System.out.println("block stmt");
 		if (stmtList.parse())
 		{
 			if (Main.code.get(Main.index).get(1).equals("}"))

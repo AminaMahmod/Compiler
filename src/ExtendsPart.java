@@ -13,6 +13,7 @@ public class ExtendsPart {
 	}
 
 	public boolean parse() {
+		System.out.println("extends");
 		if (className==null)
 			return true;		// epsilon
 		else if (Main.code.get(Main.index).get(1).equals("extends")) {

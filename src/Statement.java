@@ -8,6 +8,7 @@ public class Statement {
 
 	public boolean parse() 
 	{
+		System.out.println("stmt");
 		if (Main.code.get(Main.index).get(1).equals("{"))
 			stmt = new BlockStatement();
 		else if (Main.code.get(Main.index).get(1).equals("if"))

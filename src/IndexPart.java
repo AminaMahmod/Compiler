@@ -17,7 +17,7 @@ public class IndexPart
 	}
 
 	public boolean parse() {
-		
+		System.out.println("index");
 		if (exp == null)
 			return true; 
 		if (Main.code.get(Main.index).get(1).equals("["))

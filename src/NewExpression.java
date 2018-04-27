@@ -5,6 +5,8 @@ public class NewExpression {
 	private OtherExpressions otherexp;
 	
 	public boolean parse() {
+		exp = new Expression() ;
+		System.out.println("New exp");
 		if(exp.parse()==true)
 		{
 			if(otherexp.parse()==true || otherexp == null)
