@@ -23,7 +23,7 @@ public class OtherParameters {
 			par.prettyPrint();
 		}
 		else
-			System.out.println(" ");
+			System.out.print(" ");
 	}
 
 }

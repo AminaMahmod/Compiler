@@ -15,8 +15,33 @@ public class AssignmentStatement extends Statement
 		this.exp = exp;
 	}
 
+	public Identifier getId() {
+		return id;
+	}
+
+	public void setId(Identifier id) {
+		this.id = id;
+	}
+
+	public IndexPart getIndex() {
+		return index;
+	}
+
+	public void setIndex(IndexPart index) {
+		this.index = index;
+	}
+
+	public Expression getExp() {
+		return exp;
+	}
+
+	public void setExp(Expression exp) {
+		this.exp = exp;
+	}
+
 	public boolean parse() 
 	{
+		id.setId(Main.code.get(Main.index).get(1));
 		if (index.parse())
 		{
 			if (Main.code.get(Main.index).get(1).equals("="))

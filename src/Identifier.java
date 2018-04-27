@@ -11,6 +11,14 @@ public class Identifier
 		this.id = id;
 	}
 	
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+	
 	public boolean parse()
 	{
 		if (Main.code.get(Main.index).get(0).equals("<ID>"))

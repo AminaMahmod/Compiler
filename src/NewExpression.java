@@ -7,7 +7,7 @@ public class NewExpression {
 	public boolean parse() {
 		if(exp.parse()==true)
 		{
-			if(otherexp.parse()==true)
+			if(otherexp.parse()==true || otherexp == null)
 			{
 				return true;
 			}
@@ -18,7 +18,8 @@ public class NewExpression {
 	public void prettyPrint() 
 	{
 		exp.prettyPrint();
-		otherexp.prettyPrint();
+		if (otherexp != null)
+			otherexp.prettyPrint();
 	}
 
 }

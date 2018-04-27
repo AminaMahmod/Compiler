@@ -18,12 +18,12 @@ public class Body {
 	}
 
 	public void prettyPrint() {
-		if(var != null){
+		if(var != null)
 			var.prettyPrint();
+		if(bodystmt != null)
 			bodystmt.prettyPrint();
-		}
 		else
-			System.out.println(" ");
+			System.out.print(" ");
 	}
 
 }

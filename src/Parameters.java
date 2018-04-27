@@ -14,7 +14,7 @@ public class Parameters {
 	public boolean parse() {
 		if(type.parse() == true){
 			if(id.parse() == true){
-				if(othpar.parse() == true){
+				if(othpar.parse() == true || othpar == null){
 					return true;
 				}
 			}
@@ -26,10 +26,11 @@ public class Parameters {
 		if(type != null){
 			type.prettyPrint();
 			id.prettyPrint();
-			othpar.prettyPrint();
+			if (othpar != null)
+				othpar.prettyPrint();
 		}
 		else
-			System.out.println(" ");
+			System.out.print(" ");
 	}
 
 

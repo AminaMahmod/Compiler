@@ -1,10 +1,22 @@
 public class MainClass {
-	private Identifier className = new Identifier();
-	private Identifier args = new Identifier();
-	private Statement stmt = new Statement();
+	private Identifier className ;
+	private Identifier args;
+	private Statement stmt ;
+
+	public MainClass() {
+		super();
+	}
+	
+	public MainClass(Identifier className, Identifier args, Statement stmt) {
+		super();
+		this.className = className;
+		this.args = args;
+		this.stmt = stmt;
+	}
 
 	public boolean parse() {
 		if (Main.code.get(Main.index).get(1).equals("class")) {
+			className = new Identifier();
 			Main.index++;
 			if (className.parse()) {
 				if (Main.code.get(Main.index).get(1).equals("{")) {
@@ -27,12 +39,13 @@ public class MainClass {
 												Main.index++;
 												if (Main.code.get(Main.index).get(1).equals("]")) {
 													Main.index++;
+													args = new Identifier() ;
 													if (args.parse() == true) {
-//														if (Main.code.get(Main.index).get(1).equals("0")) {
+														if (Main.code.get(Main.index).get(1).equals(")")) {
 															Main.index++;
 															if (Main.code.get(Main.index).get(1).equals("{")) {
 																Main.index++;
-																
+																stmt = new Statement();
 																if (stmt.parse() == true) {
 																	if (Main.code.get(Main.index).get(1).equals("}")) {
 																		Main.index++;
@@ -44,7 +57,7 @@ public class MainClass {
 																	}
 																}
 															}
-//														}
+														}
 													}
 												}
 											}

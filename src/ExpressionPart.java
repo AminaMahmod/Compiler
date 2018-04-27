@@ -6,18 +6,23 @@ public class ExpressionPart {
 	private DotPart dp;
 
 	public boolean parse() {
-		if (op.parse() == true) {
-			if (exp.parse() == true) {
+		if (op.parse() == true) 
+		{
+			if (exp.parse() == true)
+			{
 				return true;
 			}
-		} else if (Main.code.get(Main.index).get(1).equals("[")) {
+		} 
+		else if (Main.code.get(Main.index).get(1).equals("[")) {
 			Main.index++;
 			if (exp.parse() == true) {
 				if (Main.code.get(Main.index).get(1).equals("]")) {
+					Main.index ++;
 					return true;
 				}
 			}
 		} else if (Main.code.get(Main.index).get(1).equals(".")) {
+			Main.index ++;
 			if (dp.parse() == true) {
 				return true;
 			}
@@ -26,14 +31,18 @@ public class ExpressionPart {
 	}
 
 	public void prettyPrint() {
-		if (op != null) {
+		if (op != null)
+		{
 			op.prettyPrint();
 			exp.prettyPrint();
-		} else if (exp != null) {
+		}
+		else if (exp != null) 
+		{
 			System.out.println("[");
 			exp.prettyPrint();
 			System.out.println("]");
-		} else if (dp != null) {
+		}
+		else if (dp != null) {
 			System.out.println(".");
 			dp.prettyPrint();
 		}

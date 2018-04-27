@@ -10,7 +10,7 @@ public class BodyStatement {
 	
 	public boolean parse() {
 		 if(stmt.parse() == true){
-			 if(bodystmt.parse() == true)
+			 if(bodystmt.parse() == true || bodystmt == null )
 				 return true;
 		 }
 		return false;
@@ -19,10 +19,11 @@ public class BodyStatement {
 	public void prettyPrint() {
 		if(stmt != null){
 			stmt.prettyPrint();
-			bodystmt.prettyPrint();
+			if (bodystmt != null)
+				bodystmt.prettyPrint();
 		}
 		else
-			System.out.println(" ");
+			System.out.print(" ");
 	}
 
 }

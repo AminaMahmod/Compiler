@@ -15,7 +15,7 @@ public class VariableDeclaration {
 			if (id.parse() == true) {
 				if (Main.code.get(Main.index).get(1).equals(";")) {
 					Main.index++;
-					if(var.parse()==true){
+					if(var.parse()==true || var == null){
 						return true;
 					}
 				}
@@ -30,10 +30,9 @@ public class VariableDeclaration {
 			type.prettyPrint();
 			id.prettyPrint();
 			System.out.println(";");
-			var.prettyPrint();
+			if(var != null)
+				var.prettyPrint();
 		}
-		else
-			System.out.println(" ");
 	}
 	
 }

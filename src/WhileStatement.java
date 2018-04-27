@@ -1,7 +1,7 @@
 public class WhileStatement extends Statement 
 {
-	private Expression exp ;
-	private Statement stmt ;
+	private Expression exp = new Expression();
+	private Statement stmt = new Statement();
 
 	public WhileStatement() {
 		super();

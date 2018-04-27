@@ -4,9 +4,10 @@ public class ClassBody {
 	public ConstructorDeclaration cons;
 	public MethodDeclaration method;
 
-	public String prettyPrint() {
-		// TODO Auto-generated method stub
-		return null;
+	public void prettyPrint() {
+		var.prettyPrint();
+		cons.prettyPrint();
+		method.prettyPrint();
 	}
 
 	public boolean parse() {

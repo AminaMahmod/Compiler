@@ -3,6 +3,7 @@ public class OtherExpressions {
 
 	//OtherExpressions -> "," NewExpression | epsilon
 	private NewExpression newexp;
+	
 	public boolean parse() {
 		if(Main.code.get(Main.index).get(1).equals(","))
 		{

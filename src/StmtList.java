@@ -11,11 +11,7 @@ public class StmtList
 
 	public void prettyPrint() 
 	{
-		if (stmt == null)
-		{
-			System.out.print("");
-		}
-		else
+		if (stmt != null)
 		{
 			stmt.prettyPrint();
 			list.prettyPrint();

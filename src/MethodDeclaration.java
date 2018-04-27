@@ -6,9 +6,10 @@ public class MethodDeclaration {
 	private Parameters par;
 	private Body body;
 	private Expression exp;
+	private MethodDeclaration method;
 
 	public MethodDeclaration(AccessModifier acsss, Type type, Identifier id, Parameters par, Body body,
-			Expression exp) {
+			Expression exp , MethodDeclaration method) {
 
 		this.acsss = acsss;
 		this.type = type;
@@ -16,10 +17,11 @@ public class MethodDeclaration {
 		this.par = par;
 		this.body = body;
 		this.exp = exp;
+		this.method = method;
 	}
 
 	public boolean parse() {
-		if (acsss.pares() == true) {
+		if (acsss.parse() == true) {
 			if (type.parse() == true) {
 				if (id.parse() == true) {
 					if (Main.code.get(Main.index).get(1).equals("(")) {
@@ -37,7 +39,8 @@ public class MethodDeclaration {
 													Main.index++;
 													if (Main.code.get(Main.index).get(1).equals("}")) {
 														Main.index++;
-														return true;
+														if (method.parse() || method==null)
+															return true;
 													}
 
 												}
@@ -73,7 +76,10 @@ public class MethodDeclaration {
 			exp.prettyPrint();
 			System.out.println(";");
 			System.out.println("}");
+			if (method !=null)
+				method.prettyPrint();
 		}
+		
 	}
 
 }

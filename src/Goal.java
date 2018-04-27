@@ -4,8 +4,18 @@ public class Goal {
 
 	private MainClass main = new MainClass();
 	private ArrayList<OtherClasses> classes = new ArrayList<OtherClasses>();
+	
+	public Goal() {
+		super();
+	}
 
-	public boolean parse() {
+	public Goal(MainClass main, ArrayList<OtherClasses> classes) {
+		super();
+		this.main = main;
+		this.classes = classes;
+	}
+	
+	public Object parse() {
 		boolean mainClass = main.parse();
 		Main.index++;
 		boolean otherClasses = true;
@@ -26,5 +36,7 @@ public class Goal {
 		}
 		System.out.println("EOF");
 	}
+
+
 
 }

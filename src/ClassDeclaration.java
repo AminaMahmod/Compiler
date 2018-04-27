@@ -5,17 +5,17 @@ public class ClassDeclaration {
 	public ClassBody cb;
 
 	public boolean parse() {
-		if (Main.code.get(Main.index).get(1).equals("class")) {
+		if (Main.code.get(Main.index).get(1).equals("class"))
+		{
 			Main.index++;
-			className.parse();
-
-			if (ep.parse() == true) {
-				if (cb.parse() == true) {
-					return true;
+			if (className.parse())
+			{
+				if (ep.parse() == true) {
+					if (cb.parse() == true) {
+						return true;
+					}
 				}
 			}
-		} else {
-			return false;
 		}
 		return false;
 	}

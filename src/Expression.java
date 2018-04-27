@@ -1,12 +1,12 @@
 public class Expression 
 {
-	public ExpressionFinal f;
-	public Expression s;
-	public Identifier id;
-	public NewPart np;
-	public static String type;
-	public int integer;
-	public float flt;
+	private ExpressionFinal f;
+	private Expression s;
+	private Identifier id;
+	private NewPart np;
+	private String type;
+	private int integer;
+	private float flt;
 	
 	public Expression() {
 		super();
@@ -14,7 +14,6 @@ public class Expression
 
 	
 	public Expression(ExpressionFinal f,Expression s,Identifier id,NewPart np,int integer,float flt)
-	
 	{
 			this.f=f;
 			this.s=s;
@@ -77,23 +76,21 @@ public class Expression
 		
 	}
 
-	public boolean parse() {
-		return true;
-/*		if(Main.code.get(Main.index).get(1).equals("this"))
-				{
-					Main.index++;
-					if(f.parse())
-						{
-						type="this";
-						return true;
-						}
-				}
-		
+	public boolean parse() 
+	{
+		if(Main.code.get(Main.index).get(1).equals("this"))
+		{
+			Main.index++;
+			if(f.parse())
+			{
+				type="this";
+				return true;
+			}
+		}
 		else if(id.parse()&& f.parse())
 		{
-				type="id";
-				return true;
-			
+			type="id";
+			return true;
 		}
 		else if(Main.code.get(Main.index).get(1).equals("false"))
 		{
@@ -113,8 +110,9 @@ public class Expression
 				return true;
 			}
 		}
-		else if (Main.code.get(Main.index).get(1).equals("<INTEGER_LITERAL>"))
+		else if (Main.code.get(Main.index).get(0).equals("<INTEGER_LITERAL>"))
 		{
+			integer = Integer.parseInt(Main.code.get(Main.index).get(1));
 			Main.index++;
 			if(f.parse())
 			{
@@ -122,8 +120,9 @@ public class Expression
 				return true;
 			}
 		}
-		else if (Main.code.get(Main.index).get(1).equals("<FLOAT_LITERAL>"))
+		else if (Main.code.get(Main.index).get(0).equals("<FLOAT_LITERAL>"))
 		{
+			flt = Float.parseFloat(Main.code.get(Main.index).get(1));
 			Main.index++;
 			if(f.parse())
 			{
@@ -133,12 +132,11 @@ public class Expression
 		}
 		else if (Main.code.get(Main.index).get(1).equals("!"))
 		{	
-			
 			Main.index++;
 			if(s.parse()&& f.parse())
 			{
-					type="expln";
-					return true;
+				type="expln";
+				return true;
 			}
 			
 		}
@@ -168,7 +166,7 @@ public class Expression
 			}
 		}
 		
-	return false;	
-	*/}
+		return false;	
+	}
 
 }

@@ -3,12 +3,14 @@ public class ConstructorDeclaration {
 	private Identifier id;
 	private Parameters par;
 	private Body body;
+	private ConstructorDeclaration cons; 
 
-	public ConstructorDeclaration(Identifier id, Parameters par, Body body) {
+	public ConstructorDeclaration(Identifier id, Parameters par, Body body, ConstructorDeclaration cons) {
 		super();
 		this.id = id;
 		this.par = par;
 		this.body = body;
+		this.cons = cons ;
 	}
 
 	public boolean parse() {
@@ -23,7 +25,8 @@ public class ConstructorDeclaration {
 							if (body.parse() == true) {
 								if (Main.code.get(Main.index).get(1).equals("}")) {
 									Main.index++;
-									return true;
+									if (cons.parse() || cons == null)
+										return true;
 								}
 							}
 						}
@@ -44,10 +47,9 @@ public class ConstructorDeclaration {
 			System.out.println("{");
 			body.prettyPrint();
 			System.out.println("}");
-
+			if (cons != null)
+				cons.prettyPrint();
 		}
-		else
-			System.out.println(" ");
 	}
 
 	

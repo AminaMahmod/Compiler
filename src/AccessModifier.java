@@ -1,19 +1,30 @@
 public class AccessModifier {
 
-	// constructor ??	
-
+	private String modifier ;
 	
-	public boolean pares() {
+	public AccessModifier() {
+		super();
+	}
+
+	public AccessModifier(String modifier) {
+		super();
+		this.modifier = modifier;
+	}
+
+	public boolean parse() {
 		if (Main.code.get(Main.index).get(1).equals("public")) {
 			Main.index++;
+			modifier = "public" ;
 			return true;
 		}
 		else if(Main.code.get(Main.index).get(1).equals("private")){
 			Main.index ++;
+			modifier = "private" ;
 			return true;
 		}
 		else if(Main.code.get(Main.index).get(1).equals("protected")){
 			Main.index ++;
+			modifier = "protected" ;
 			return true;
 		}
 		return false;
@@ -21,6 +32,6 @@ public class AccessModifier {
 	
 	public void prettyPrint()
 	{
-	// print Whaaaaaaaaaaaaaat ??	
+		System.out.print(modifier);
 	}
 }

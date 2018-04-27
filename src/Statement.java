@@ -16,7 +16,7 @@ public class Statement {
 			stmt = new WhileStatement();
 		else if (Main.code.get(Main.index).get(1).equals("System.out.println"))
 			stmt = new PrintStatement();
-		else if (Main.code.get(Main.index).get(0).equals("<IDENTIFIER>"))
+		else if (Main.code.get(Main.index).get(0).equals("<ID>"))
 			stmt = new AssignmentStatement();
 /*		else
 			return false;

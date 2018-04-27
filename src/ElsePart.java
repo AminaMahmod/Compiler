@@ -1,11 +1,11 @@
 public class ElsePart 
 {
+	private Statement stmt ; 
+	
 	public ElsePart(Statement stmt) {
 		super();
 		this.stmt = stmt;
 	}
-
-	private Statement stmt ; 
 	
 	public void prettyPrint() {
 		if (stmt == null)

@@ -19,7 +19,7 @@ public class Type
 	}
 
 
-	Type()
+	public Type()
 	{
 		types.add("<STRING>");
 		types.add("<BOOLEAN>");
