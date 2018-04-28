@@ -67,8 +67,12 @@ public class ConstructorDeclaration {
 				System.out.println(" ( ");
 				par.prettyPrint();
 				System.out.println(" ) ");
+				Main.tabsCounter ++;
 				System.out.println("{");
+				System.out.println(Main.printTabs(Main.tabsCounter));
 				body.prettyPrint();
+				Main.tabsCounter --;
+				System.out.println(Main.printTabs(Main.tabsCounter));
 				System.out.println("}");
 				if (cons != null)
 					cons.prettyPrint();

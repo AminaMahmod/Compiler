@@ -82,11 +82,20 @@ public class MainClass {
 		{
 			System.out.print("class ");
 			className.prettyPrint() ;
-			System.out.print("\n{\n\tpublic static void main ( String" + "[] ");
+			Main.tabsCounter ++;
+			System.out.print("\n{\n" + Main.printTabs(Main.tabsCounter) +"public static void main ( String" + "[] ");
 			args.prettyPrint();
-			System.out.println(")\n\t{\t\t" );
+			System.out.println( ")\n");
+			System.out.println( Main.printTabs(Main.tabsCounter)+"{");
+			Main.tabsCounter++;
+			System.out.println(Main.printTabs(Main.tabsCounter) );
 			stmt.prettyPrint(); 
-			System.out.println("\n}\n}");
+			Main.tabsCounter--;
+			System.out.println(Main.printTabs(Main.tabsCounter) );
+			System.out.println("\n}");
+			Main.tabsCounter --;
+			System.out.println(Main.printTabs(Main.tabsCounter) );
+			System.out.println("\n}");
 		}
 		else 
 			System.out.println("Check the syntax first");

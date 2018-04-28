@@ -19,11 +19,17 @@ public class ClassBody {
 
 	public void prettyPrint() {
 		if (parsed) {
+			Main.tabsCounter++;
 			System.out.println("\n{\n");
+			System.out.println(Main.printTabs(Main.tabsCounter));
 			var.prettyPrint();
 			cons.prettyPrint();
 			method.prettyPrint();
+			Main.tabsCounter --;
+			System.out.println(Main.printTabs(Main.tabsCounter));
+
 			System.out.println("\n}\n");
+
 
 		} else
 			System.out.println("Check the syntax first");

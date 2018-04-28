@@ -4,10 +4,18 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-
+	
 	public static int index = 0;
+	public static int tabsCounter = 0;
 	public static ArrayList<ArrayList<String>> code = new ArrayList<ArrayList<String>>();
 
+	public static String printTabs (int number){
+		String tab="";
+		for(int i=0 ; i<number ; i++){
+			tab+="\t";
+		}
+		return tab;
+	}
 	public static boolean match(String s) {
 		if (code.get(index).get(1).equals(s)) {
 			return true;

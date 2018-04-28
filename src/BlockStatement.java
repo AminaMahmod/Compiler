@@ -40,10 +40,14 @@ public class BlockStatement  extends Statement
 	{
 		if (parsed)
 		{
+			Main.tabsCounter ++;
 			System.out.println("{");
-			System.out.print("\t");
+			System.out.println(Main.printTabs(Main.tabsCounter));
 			stmtList.prettyPrint(); 
+			Main.tabsCounter --;
+			System.out.println(Main.printTabs(Main.tabsCounter));
 			System.out.println("}");
+			
 		}
 		else
 			System.out.println("Check the syntax first");

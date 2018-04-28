@@ -88,10 +88,15 @@ public class MethodDeclaration {
 				par.prettyPrint();
 				System.out.println(" ) ");
 				System.out.println("{\n");
+				Main.tabsCounter++;
+				System.out.print(Main.printTabs(Main.tabsCounter) );
 				body.prettyPrint();
+				System.out.print(Main.printTabs(Main.tabsCounter) );
 				System.out.println("\nreturn");
 				exp.prettyPrint();
 				System.out.println(" ;");
+				Main.tabsCounter--;
+				System.out.print(Main.printTabs(Main.tabsCounter) );
 				System.out.println("\n}");
 				if (method !=null)
 					method.prettyPrint();
