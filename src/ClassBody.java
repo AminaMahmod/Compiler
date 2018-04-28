@@ -1,24 +1,52 @@
+import java.util.ArrayList;
 
 public class ClassBody {
 	public VariableDeclaration var;
 	public ConstructorDeclaration cons;
 	public MethodDeclaration method;
+	private boolean parsed = false;
+	private static ArrayList<String> types = new ArrayList<>();
+
+	public ClassBody() {
+		types.add("<STRING>");
+		types.add("<BOOLEAN>");
+		types.add("<INT>");
+		types.add("<CHARACTER>");
+		types.add("<FLOAT>");
+
+	}
 
 	public void prettyPrint() {
-		var.prettyPrint();
-		cons.prettyPrint();
-		method.prettyPrint();
+		if (parsed) {
+			var.prettyPrint();
+			cons.prettyPrint();
+			method.prettyPrint();
+		} else
+			System.out.println("Check the syntax first");
 	}
 
 	public boolean parse() {
 		System.out.println("class body");
 		if (Main.code.get(Main.index).get(1).equals("{")) {
 			Main.index++;
-			if (var.parse() == true && cons.parse() == true && method.parse()) {
+			if (types.contains(Main.code.get(Main.index).get(0)))
+				var = new VariableDeclaration();
+			if (var == null || var.parse() == true) {
+				if (Main.code.get(Main.index).get(0).equals("<ID>"))
+					cons = new ConstructorDeclaration();
+				if (cons == null || cons.parse() == true) {
+					if (Main.code.get(Main.index).get(1).equals("public")
+							|| Main.code.get(Main.index).get(1).equals("private")
+							|| Main.code.get(Main.index).get(1).equals("protected"))
+						method = new MethodDeclaration();
 
-				if (Main.code.get(Main.index).get(1).equals("}")) {
-					Main.index++;
-					return true;
+					if (method == null || method.parse()) {
+						if (Main.code.get(Main.index).get(1).equals("}")) {
+							parsed = true;
+							Main.index++;
+							return true;
+						}
+					}
 				}
 			}
 		}

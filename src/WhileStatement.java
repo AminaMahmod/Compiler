@@ -2,6 +2,7 @@ public class WhileStatement extends Statement
 {
 	private Expression exp = new Expression();
 	private Statement stmt = new Statement();
+	private boolean parsed = false;
 
 	public WhileStatement() {
 		super();
@@ -26,6 +27,7 @@ public class WhileStatement extends Statement
 					Main.index ++ ;
 					if (stmt.parse())
 					{
+						parsed = true;
 						return true; 
 					}
 				}
@@ -36,10 +38,17 @@ public class WhileStatement extends Statement
 	
 	public void prettyPrint()
 	{
-		System.out.print("while ( " );
-		exp.prettyPrint();
-		System.out.print(")\n");
-		stmt.prettyPrint();
+		if (parsed)
+		{
+			System.out.print("while ( " );
+			exp.prettyPrint();
+			System.out.print(")\n");
+			stmt.prettyPrint();
+		}
+		else
+		{
+			System.out.println("Check the syntax first");
+		}
 	}
 
 }

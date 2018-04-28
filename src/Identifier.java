@@ -1,6 +1,7 @@
 public class Identifier 
 {
 	private String id ;
+	private boolean parsed = false;
 
 	public Identifier() {
 		super();
@@ -26,14 +27,17 @@ public class Identifier
 		{
 			id = Main.code.get(Main.index).get(1);
 			Main.index++;
+			parsed = true;
 			return true;
 		}
 		return false; 
 	}
 
 	public void prettyPrint() {
-		
-		System.out.print(id);
+		if (parsed)
+			System.out.print(id);
+		else
+			System.out.println("Check the syb=ntax first");
 	}
 
 }

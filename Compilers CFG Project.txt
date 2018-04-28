@@ -48,7 +48,7 @@ Expression -> "this" ExpressionFinal |
 			  Identifier ExpressionFinal |
 			  "false" ExpressionFinal | 
 			  "true" ExpressionFinal | 
-			  <INTEGER_LITERAL> ExpressionFinal | 
+			  <INTEGERAL_LITERAL> ExpressionFinal | 
 			  <FLOAT_LITERAL> ExpressionFinal | 
 			  "!" Expression ExpressionFinal |
 			  "(" Expression ")" ExpressionFinal |
@@ -66,5 +66,4 @@ ExpressionPart -> Operator Expression |
 				  "[" Expression "]" |
 				  "." DotPart
 DotPart -> "length" | Identifier "(" NewExpression ")"
-Operator -> "&&" | "||" | "==" | "!=" | "+" | "-" | "*" | "/"  | ">" Equal | "<" Equal 
-Equal ->  "=" | epsilon
+Operator -> "&&" | "||" | "==" | "!=" | "+" | "-" | "*" | "/"  | ">=" | "<="

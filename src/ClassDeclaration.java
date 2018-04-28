@@ -1,9 +1,10 @@
-
 public class ClassDeclaration {
-	public Identifier className;
-	public ExtendsPart ep;
-	public ClassBody cb;
 
+	public Identifier className = new Identifier();
+	public ExtendsPart ep;
+	public ClassBody cb = new ClassBody();
+	private boolean parsed= false;
+	
 	public boolean parse() {
 		System.out.println("class declaration");
 		if (Main.code.get(Main.index).get(1).equals("class"))
@@ -11,8 +12,11 @@ public class ClassDeclaration {
 			Main.index++;
 			if (className.parse())
 			{
-				if (ep.parse() == true) {
+				if (Main.code.get(Main.index).get(1).equals("extends")) 
+					ep = new ExtendsPart();
+				if (ep==null || ep.parse() == true) {
 					if (cb.parse() == true) {
+						parsed = true;
 						return true;
 					}
 				}
@@ -22,10 +26,16 @@ public class ClassDeclaration {
 	}
 
 	public void prettyPrint() {
-		System.out.println("class ");
-		className.prettyPrint();
-		ep.prettyPrint();
-		cb.prettyPrint();
+		if(parsed)
+		{
+			System.out.println("class ");
+			className.prettyPrint();
+			ep.prettyPrint();
+			cb.prettyPrint();
+		}
+		else 
+			System.out.println("Check the syntax first");
 	}
 
+	
 }

@@ -3,6 +3,7 @@ public class If_Statement extends Statement
 	private Expression exp ;
 	private Statement stmt ;
 	private ElsePart ePart ;
+	private boolean parsed = false ;
 	
 	public If_Statement() {
 		super();
@@ -21,15 +22,22 @@ public class If_Statement extends Statement
 		if (Main.code.get(Main.index).get(1).equals("("))
 		{
 			Main.index ++ ;
+			exp = new Expression() ;
+			
 			if (exp.parse())
 			{
 				if (Main.code.get(Main.index).get(1).equals(")"))
 				{
 					Main.index ++ ;
+					stmt = new Statement();
 					if (stmt.parse())
 					{
-						if (ePart.parse())
+						if (Main.code.get(Main.index).get(1).equals("else"))
+							ePart = new ElsePart(); 
+						
+						if (ePart==null||ePart.parse())
 						{
+							parsed = true;
 							return true;
 						}
 					}
@@ -41,11 +49,17 @@ public class If_Statement extends Statement
 
 	public void prettyPrint()
 	{
-		System.out.print("if ( ");
-		exp.prettyPrint();
-		System.out.println(" )");
-		stmt.prettyPrint();
-		ePart.prettyPrint();
-		
+		if (parsed)
+		{
+			System.out.print("if ( ");
+			exp.prettyPrint();
+			System.out.println(" )");
+			stmt.prettyPrint();
+			ePart.prettyPrint();
+		}
+		else
+		{
+			System.out.println("Check the syntax first");
+		}
 	}
 }

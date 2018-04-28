@@ -1,9 +1,13 @@
 public class Statement {
 
 	private Statement stmt ;
+	private boolean parsed = false;
 	
 	public void prettyPrint() {
-		stmt.prettyPrint(); 
+		if (parsed)
+			stmt.prettyPrint(); 
+		else
+			System.out.println("Check the syntax first");
 	}
 
 	public boolean parse() 
@@ -19,12 +23,15 @@ public class Statement {
 			stmt = new PrintStatement();
 		else if (Main.code.get(Main.index).get(0).equals("<ID>"))
 			stmt = new AssignmentStatement();
-/*		else
+		else
 			return false;
-	*/		
+			
 		Main.index ++ ;
 		if (stmt.parse())
+		{
+			parsed = true;
 			return true;
+		}
 		else
 			return false;
 	}

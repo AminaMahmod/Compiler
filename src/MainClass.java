@@ -1,8 +1,9 @@
 public class MainClass {
-	private Identifier className ;
-	private Identifier args;
-	private Statement stmt ;
-
+	private Identifier className = new Identifier();
+	private Identifier args = new Identifier();
+	private Statement stmt = new Statement() ;
+	private boolean parsed = false;
+	
 	public MainClass() {
 		super();
 	}
@@ -21,11 +22,9 @@ public class MainClass {
 			Main.index++;
 			if (className.parse()) {
 				if (Main.code.get(Main.index).get(1).equals("{")) {
-					Main.index++;
-					
+					Main.index++;					
 					if (Main.code.get(Main.index).get(1).equals("public")) {
 						Main.index++;
-						
 						if (Main.code.get(Main.index).get(1).equals("static")) {
 							Main.index++;
 							if (Main.code.get(Main.index).get(1).equals("void")) {
@@ -53,6 +52,7 @@ public class MainClass {
 																		if (Main.code.get(Main.index).get(1)
 																				.equals("}")) {
 																			Main.index++;
+																			parsed = true;
 																			return true;
 																		}
 																	}
@@ -78,16 +78,17 @@ public class MainClass {
 	// "class" Identifier "{" "public" "static" "void"
 	// "main" "(" "String" "[" "]" Identifier ")" "{" Statement "}" "}"
 	public void prettyPrint() {
-
-		System.out.print("class ");
-		className.prettyPrint() ;
-		System.out.print("\n{\n\tpublic static void main ( String" + "[] ");
-		args.prettyPrint();
-		System.out.println(")\n\t{\t\t" );
-		stmt.prettyPrint(); 
-		System.out.println("\n}\n}");
-		
-
+		if(parsed)
+		{
+			System.out.print("class ");
+			className.prettyPrint() ;
+			System.out.print("\n{\n\tpublic static void main ( String" + "[] ");
+			args.prettyPrint();
+			System.out.println(")\n\t{\t\t" );
+			stmt.prettyPrint(); 
+			System.out.println("\n}\n}");
+		}
+		else 
+			System.out.println("Check the syntax first");
 	}
-
 }

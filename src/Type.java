@@ -5,7 +5,7 @@ public class Type
 	private String dataType ;
 	private ArrayPart arrPart ;
 	private static ArrayList<String> types = new ArrayList<>();
-	
+	private boolean parsed = false;
 	
 	public Type(String dataType, ArrayPart arrPart) {
 		super();
@@ -32,9 +32,16 @@ public class Type
 
 	public void prettyPrint()
 	{
-		System.out.print(dataType);
-		if (arrPart != null)
-			arrPart.prettyPrint();
+		if (parsed)
+		{
+			System.out.print(dataType);
+			if (arrPart != null)
+				arrPart.prettyPrint();
+		}
+		else
+		{
+			System.out.println("Check the syntax first");
+		}
 	}
 	
 	public boolean parse()
@@ -44,8 +51,11 @@ public class Type
 		{
 			dataType = Main.code.get(Main.index).get(1);
 			Main.index ++ ;
-			if  (arrPart.parse() || arrPart == null)
+			if (Main.code.get(Main.index).get(1).equals("["))
+				arrPart = new ArrayPart() ;
+			if (arrPart == null||arrPart.parse() )
 			{
+				parsed = true;
 				return true;
 			}
 		}

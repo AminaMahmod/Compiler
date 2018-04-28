@@ -42,12 +42,16 @@ public class AssignmentStatement extends Statement
 	public boolean parse() 
 	{
 		System.out.println("= stmt");
+		id = new Identifier();
 		id.setId(Main.code.get(Main.index).get(1));
-		if (index.parse())
+		if (Main.code.get(Main.index).get(1).equals("["))
+			index = new IndexPart();
+		if (index == null || index.parse())
 		{
 			if (Main.code.get(Main.index).get(1).equals("="))
 			{
 				Main.index ++ ;
+				exp = new Expression() ;
 				if (exp.parse())
 				{
 					if (Main.code.get(Main.index).get(1).equals(";"))

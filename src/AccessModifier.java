@@ -1,6 +1,7 @@
 public class AccessModifier {
 
 	private String modifier ;
+	private boolean parsed = false;
 	
 	public AccessModifier() {
 		super();
@@ -16,16 +17,19 @@ public class AccessModifier {
 		if (Main.code.get(Main.index).get(1).equals("public")) {
 			Main.index++;
 			modifier = "public" ;
+			parsed = true;
 			return true;
 		}
 		else if(Main.code.get(Main.index).get(1).equals("private")){
 			Main.index ++;
 			modifier = "private" ;
+			parsed = true;
 			return true;
 		}
 		else if(Main.code.get(Main.index).get(1).equals("protected")){
 			Main.index ++;
 			modifier = "protected" ;
+			parsed = true;
 			return true;
 		}
 		return false;
@@ -33,6 +37,9 @@ public class AccessModifier {
 	
 	public void prettyPrint()
 	{
-		System.out.print(modifier);
+		if (parsed)
+			System.out.print(modifier);
+		else
+			System.out.println("Check the syntax first");
 	}
 }

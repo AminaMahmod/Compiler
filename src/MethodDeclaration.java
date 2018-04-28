@@ -1,13 +1,14 @@
 public class MethodDeclaration {
 
-	private AccessModifier acsss;
-	private Type type;
-	private Identifier id;
-	private Parameters par;
-	private Body body;
-	private Expression exp;
+	private AccessModifier acsss = new AccessModifier();
+	private Type type = new Type();
+	private Identifier id = new Identifier();
+	private Parameters par = new Parameters();
+	private Body body = new Body();
+	private Expression exp = new Expression();
 	private MethodDeclaration method;
-
+	private boolean parsed = false;
+	
 	public MethodDeclaration(AccessModifier acsss, Type type, Identifier id, Parameters par, Body body,
 			Expression exp , MethodDeclaration method) {
 
@@ -18,6 +19,10 @@ public class MethodDeclaration {
 		this.body = body;
 		this.exp = exp;
 		this.method = method;
+	}
+
+	public MethodDeclaration() {
+		// TODO Auto-generated constructor stub
 	}
 
 	public boolean parse() {
@@ -40,8 +45,16 @@ public class MethodDeclaration {
 													Main.index++;
 													if (Main.code.get(Main.index).get(1).equals("}")) {
 														Main.index++;
-														if (method.parse() || method==null)
+														if (Main.code.get(Main.index).get(1).equals("public")
+																|| Main.code.get(Main.index).get(1).equals("private")
+																|| Main.code.get(Main.index).get(1).equals("protected"))
+															method = new MethodDeclaration();
+
+														if ( method==null || method.parse() )
+														{
+															parsed = true;
 															return true;
+														}
 													}
 
 												}
@@ -64,23 +77,28 @@ public class MethodDeclaration {
 	}
 
 	public void prettyPrint() {
-		if (acsss != null) {
-			acsss.prettyPrint();
-			type.prettyPrint();
-			id.prettyPrint();
-			System.out.println("(");
-			par.prettyPrint();
-			System.out.println(")");
-			System.out.println("{");
-			body.prettyPrint();
-			System.out.println("return");
-			exp.prettyPrint();
-			System.out.println(";");
-			System.out.println("}");
-			if (method !=null)
-				method.prettyPrint();
+		if(parsed)
+		{
+			if (acsss != null)
+			{
+				acsss.prettyPrint();
+				type.prettyPrint();
+				id.prettyPrint();
+				System.out.println("(");
+				par.prettyPrint();
+				System.out.println(")");
+				System.out.println("{");
+				body.prettyPrint();
+				System.out.println("return");
+				exp.prettyPrint();
+				System.out.println(";");
+				System.out.println("}");
+				if (method !=null)
+					method.prettyPrint();
+			}
 		}
-		
+		else 
+			System.out.println("Check the syntax first");
 	}
 
 }

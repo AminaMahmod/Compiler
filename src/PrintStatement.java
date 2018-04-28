@@ -17,6 +17,7 @@ public class PrintStatement extends Statement
 		if (Main.code.get(Main.index).get(1).equals("("))
 		{
 			Main.index ++ ;
+			exp = new Expression() ;
 			if (exp.parse())
 			{
 				if (Main.code.get(Main.index).get(1).equals(")"))
