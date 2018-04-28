@@ -7,6 +7,9 @@ public class Operator {
 	
 	public boolean parse() {
 		System.out.println("operator");
+		System.out.println("beeeeeeeeeeeeeeeeeeeep");
+		System.out.println(Main.code.get(Main.index).get(1).equals("!") && Main.code.get(Main.index+1).get(1).equals("="));
+		System.out.println("beeeeeeeeeeeeeeeeeeeep");
 		if(Main.code.get(Main.index).get(1).equals("&&"))
 		{
 			opt = "&&" ;
@@ -28,10 +31,10 @@ public class Operator {
 			parsed = true;
 			return true;
 		}
-		else if(Main.code.get(Main.index).get(1).equals("!="))
+		else if(Main.code.get(Main.index).get(1).equals("!") && Main.code.get(Main.index+1).get(1).equals("="))
 		{
 			opt = "!=" ;
-			Main.index++;
+			Main.index+=2;
 			parsed = true;
 			return true;
 		}

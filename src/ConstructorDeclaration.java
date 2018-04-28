@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class ConstructorDeclaration {
 
 	private Identifier id;
@@ -5,6 +7,7 @@ public class ConstructorDeclaration {
 	private Body body;
 	private ConstructorDeclaration cons;
 	private boolean parsed = false;
+	private static ArrayList<String> types = new ArrayList<>();
 
 	public ConstructorDeclaration(Identifier id, Parameters par, Body body, ConstructorDeclaration cons) {
 		super();
@@ -12,9 +15,21 @@ public class ConstructorDeclaration {
 		this.par = par;
 		this.body = body;
 		this.cons = cons;
+		types.add("< STRING >");
+		types.add("< BOOLEAN >");
+		types.add("< INT >");
+		types.add("< CHARACTER >");
+		types.add("< FLOAT >");
+		types.add("< VOID >");
 	}
 
 	public ConstructorDeclaration() {
+		types.add("< STRING >");
+		types.add("< BOOLEAN >");
+		types.add("< INT >");
+		types.add("< CHARACTER >");
+		types.add("< FLOAT >");
+		types.add("< VOID >");
 	}
 
 	public boolean parse() {
@@ -22,13 +37,14 @@ public class ConstructorDeclaration {
 		if (Main.code.get(Main.index).get(0).equals("< ID >")) 
 		{
 			id = new Identifier();
-			par = new Parameters();
 			body = new Body();
 			if (id.parse() == true) {
 				if (Main.code.get(Main.index).get(1).equals("("))
 				{
 					Main.index++;
-					if (par.parse() == true) {
+					if (types.contains(Main.code.get(Main.index).get(0)))
+						par = new Parameters();
+					if (par == null || par.parse() == true) {
 						if (Main.code.get(Main.index).get(1).equals(")"))
 						{
 							Main.index++;

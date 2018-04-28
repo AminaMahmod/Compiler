@@ -30,6 +30,7 @@ public class NewPart {
 			Main.index++;
 			if (Main.code.get(Main.index).get(1).equals("[")) {
 				Main.index++;
+				exp = new Expression();
 				if (exp.parse() == true) {
 					if (Main.code.get(Main.index).get(1).equals("]")) {
 						Main.index++;

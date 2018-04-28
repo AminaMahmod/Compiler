@@ -16,7 +16,7 @@ public class Parameters {
 	}
 
 	public boolean parse() {
-//		System.out.println("param");
+		System.out.println("param");
 		type = new Type();
 		if(type.parse() == true){
 			id = new Identifier() ;

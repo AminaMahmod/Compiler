@@ -17,7 +17,7 @@ public class Expression
 		if(Main.code.get(Main.index).get(1).equals("&&") 
 				|| Main.code.get(Main.index).get(1).equals("||")
 				|| Main.code.get(Main.index).get(1).equals("==")
-				|| Main.code.get(Main.index).get(1).equals("!=")
+				|| (Main.code.get(Main.index).get(1).equals("!") && Main.code.get(Main.index+1).get(1).equals("="))
 				|| Main.code.get(Main.index).get(1).equals("+")
 				|| Main.code.get(Main.index).get(1).equals("-")
 				|| Main.code.get(Main.index).get(1).equals("*")
@@ -119,6 +119,7 @@ public class Expression
 	public boolean parse() 
 	{
 		System.out.println("expression");
+		System.out.println(Main.code.get(Main.index).get(0));
 		f = new ExpressionFinal();
 		id = new Identifier() ;
 		np = new NewPart() ;
@@ -156,7 +157,7 @@ public class Expression
 				return true;
 			}
 		}
-		else if (Main.code.get(Main.index).get(0).equals("< INTEGERAL_LITERAL >"))
+		else if (Main.code.get(Main.index).get(0).equals("< INTEGRAL_LITERAL >"))
 		{
 			integer = Integer.parseInt(Main.code.get(Main.index).get(1));
 			Main.index++;

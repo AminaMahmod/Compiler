@@ -32,7 +32,7 @@ public class Body {
 		System.out.println("body");
 		if (types.contains(Main.code.get(Main.index).get(0)))
 			var = new VariableDeclaration();
-		if (var.parse())
+		if (var == null ||var.parse())
 		{	
 			if (Main.code.get(Main.index).get(1).equals("{") ||
 				Main.code.get(Main.index).get(1).equals("if")||

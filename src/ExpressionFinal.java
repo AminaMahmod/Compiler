@@ -6,7 +6,7 @@ public class ExpressionFinal {
 
 	public boolean initFinalOperator() {
 		if (Main.code.get(Main.index).get(1).equals("&&") || Main.code.get(Main.index).get(1).equals("||")
-				|| Main.code.get(Main.index).get(1).equals("==") || Main.code.get(Main.index).get(1).equals("!=")
+				|| Main.code.get(Main.index).get(1).equals("==") || (Main.code.get(Main.index).get(1).equals("!")&&Main.code.get(Main.index+1).get(1).equals("="))
 				|| Main.code.get(Main.index).get(1).equals("+") || Main.code.get(Main.index).get(1).equals("-")
 				|| Main.code.get(Main.index).get(1).equals("*") || Main.code.get(Main.index).get(1).equals("/")
 				|| Main.code.get(Main.index).get(1).equals(">") || Main.code.get(Main.index).get(1).equals("<")
@@ -31,7 +31,6 @@ public class ExpressionFinal {
 
 	public boolean parse() {
 		System.out.println("exp final");
-		
 		if (initFinalOperator())
 			part = new ExpressionPart();
 		if (part == null) {

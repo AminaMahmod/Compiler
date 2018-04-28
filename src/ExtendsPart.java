@@ -1,6 +1,6 @@
 
 public class ExtendsPart {
-	public Identifier className;
+	public Identifier className ;
 
 	public void prettyPrint() {
 		if (className==null)
@@ -13,13 +13,14 @@ public class ExtendsPart {
 	}
 
 	public boolean parse() {
-		//System.out.println("extends ");
+		System.out.println("extends ");
+		if (Main.code.get(Main.index).get(1).equals("extends")) 
+			className = new Identifier();
 		if (className==null)
 			return true;		// epsilon
 		else if (Main.code.get(Main.index).get(1).equals("extends")) {
 			Main.index++;
 			if (className.parse() == true) {
-				Main.index++;
 				return true;
 			}
 

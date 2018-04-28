@@ -21,7 +21,8 @@ public class OtherClasses {
 	public boolean parse()
 	{		
 		System.out.println("other classes");
-		
+		//if(Main.code.get(Main.index).get(0).equals("< EOF >"))
+		//	return true;
 		if (cd.parse()) 
 		{
 			if (Main.code.get(Main.index).get(1).equals("class"))
