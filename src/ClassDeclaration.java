@@ -12,10 +12,13 @@ public class ClassDeclaration {
 		{
 			Main.index++;
 			if (className.parse())
-			{
+			{	
+				//System.out.println("MAIN: " + Main.code.get(Main.index).get(1));
+
 				if (Main.code.get(Main.index).get(1).equals("extends")) 
 					ep = new ExtendsPart();
 				if (ep==null || ep.parse() == true) {
+
 					if (cb.parse() == true) {
 						parsed = true;
 						return true;

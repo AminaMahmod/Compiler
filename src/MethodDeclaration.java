@@ -1,13 +1,16 @@
+import java.util.ArrayList;
+
 public class MethodDeclaration {
 
 	private AccessModifier acsss = new AccessModifier();
 	private Type type = new Type();
 	private Identifier id = new Identifier();
-	private Parameters par = new Parameters();
+	private Parameters par ;
 	private Body body = new Body();
 	private Expression exp = new Expression();
 	private MethodDeclaration method;
 	private boolean parsed = false;
+	private static ArrayList<String> types = new ArrayList<>();
 	
 	public MethodDeclaration(AccessModifier acsss, Type type, Identifier id, Parameters par, Body body,
 			Expression exp , MethodDeclaration method) {
@@ -19,10 +22,21 @@ public class MethodDeclaration {
 		this.body = body;
 		this.exp = exp;
 		this.method = method;
+		types.add("< STRING >");
+		types.add("< BOOLEAN >");
+		types.add("< INT >");
+		types.add("< CHARACTER >");
+		types.add("< FLOAT >");
+		types.add("< VOID >");
 	}
 
 	public MethodDeclaration() {
-		// TODO Auto-generated constructor stub
+		types.add("< STRING >");
+		types.add("< BOOLEAN >");
+		types.add("< INT >");
+		types.add("< CHARACTER >");
+		types.add("< FLOAT >");
+		types.add("< VOID >");
 	}
 
 	public boolean parse() {
@@ -32,7 +46,9 @@ public class MethodDeclaration {
 				if (id.parse() == true) {
 					if (Main.code.get(Main.index).get(1).equals("(")) {
 						Main.index++;
-						if (par.parse() == true) {
+						if (types.contains(Main.code.get(Main.index).get(0)))
+							par = new Parameters() ;
+						if (par == null || par.parse() == true) {
 							if (Main.code.get(Main.index).get(1).equals(")")) {
 								Main.index++;
 								if (Main.code.get(Main.index).get(1).equals("{")) {

@@ -30,7 +30,8 @@ public class ClassBody {
 	}
 
 	public boolean parse() {
-		//System.out.println("class body");
+		System.out.println("class body");
+		
 		if (Main.code.get(Main.index).get(1).equals("{")) {
 			Main.index++;
 			if (types.contains(Main.code.get(Main.index).get(0)))
