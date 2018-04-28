@@ -6,14 +6,14 @@ public class ExtendsPart {
 		if (className==null)
 			System.out.print(""); // epsilon
 		else {
-			System.out.println("extends");
+			System.out.println("extends ");
 			className.prettyPrint();
 		}
 
 	}
 
 	public boolean parse() {
-		System.out.println("extends");
+		//System.out.println("extends ");
 		if (className==null)
 			return true;		// epsilon
 		else if (Main.code.get(Main.index).get(1).equals("extends")) {

@@ -19,15 +19,18 @@ public class ClassBody {
 
 	public void prettyPrint() {
 		if (parsed) {
+			System.out.println("\n{\n");
 			var.prettyPrint();
 			cons.prettyPrint();
 			method.prettyPrint();
+			System.out.println("\n}\n");
+
 		} else
 			System.out.println("Check the syntax first");
 	}
 
 	public boolean parse() {
-		System.out.println("class body");
+		//System.out.println("class body");
 		if (Main.code.get(Main.index).get(1).equals("{")) {
 			Main.index++;
 			if (types.contains(Main.code.get(Main.index).get(0)))

@@ -84,15 +84,15 @@ public class MethodDeclaration {
 				acsss.prettyPrint();
 				type.prettyPrint();
 				id.prettyPrint();
-				System.out.println("(");
+				System.out.println(" ( ");
 				par.prettyPrint();
-				System.out.println(")");
-				System.out.println("{");
+				System.out.println(" ) ");
+				System.out.println("{\n");
 				body.prettyPrint();
-				System.out.println("return");
+				System.out.println("\nreturn");
 				exp.prettyPrint();
-				System.out.println(";");
-				System.out.println("}");
+				System.out.println(" ;");
+				System.out.println("\n}");
 				if (method !=null)
 					method.prettyPrint();
 			}

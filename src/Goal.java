@@ -15,7 +15,7 @@ public class Goal {
 	}
 	
 	public boolean parse() {
-		System.out.println("goal");
+		//System.out.println("goal");
 		if (Main.code.get(Main.index).get(1).equals("class"))
 			main = new MainClass() ;
 			if (main.parse())

@@ -50,16 +50,14 @@ public class Main {
 		
 		
 		Goal g = new Goal();
+		System.out.println("goaaaaaaaaaaaaaaaaaaaaaaaaaaaaal "+g.parse());
+
 		if(g.parse())
 		{
 			g.prettyPrint();
 		}
 		else
 			System.out.println("Syntax Error at " + code.get(index).get(1)+"\t"+index);
-		
-		/*Identifier id = new Identifier() ;
-		System.out.println(id.parse());
-		id.prettyPrint();*/
 		
 	}
 

@@ -37,7 +37,7 @@ public class Identifier
 		if (parsed)
 			System.out.print(id);
 		else
-			System.out.println("Check the syb=ntax first");
+			System.out.println("Check the syntax first");
 	}
 
 }
