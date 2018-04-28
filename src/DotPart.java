@@ -3,7 +3,7 @@ public class DotPart {
 
 	// DotPart -> "length" | Identifier "(" NewExpression ")"
 
-	private Identifier id;
+	private Identifier id = new Identifier();
 	private NewExpression newexp;
 	
 	public boolean parse() {
@@ -18,12 +18,16 @@ public class DotPart {
 			if(Main.code.get(Main.index).get(1).equals("("))
 			{
 				Main.index++;
-				if(newexp.parse()==true)
+				if(!Main.code.get(Main.index).get(1).equals(")"))
+					newexp = new NewExpression() ;
+				if ( newexp == null || newexp.parse())
 				{
-					if(Main.code.get(Main.index).get(1).equals(")"))
 					{
-						Main.index++;
-						return true;
+						if(Main.code.get(Main.index).get(1).equals(")"))
+						{
+							Main.index++;
+							return true;
+						}
 					}
 				}
 			}

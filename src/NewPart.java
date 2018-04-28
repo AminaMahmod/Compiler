@@ -21,7 +21,7 @@ public class NewPart {
 //Identifier "(" NewExpression ")"
 	public boolean parse() {
 		id = new Identifier();
-		newexp = new NewExpression() ;
+		//newexp = new NewExpression() ;
 		System.out.println("New Part");
 		if (types.contains(Main.code.get(Main.index).get(0))) {
 			
@@ -41,7 +41,10 @@ public class NewPart {
 		} else if (id.parse() == true) {
 			if (Main.code.get(Main.index).get(1).equals("(")) {
 				Main.index++;
-				if (newexp.parse() == true || newexp == null) {
+				if(!Main.code.get(Main.index).get(1).equals(")"))
+					newexp = new NewExpression() ;
+				if ( newexp == null || newexp.parse()) {
+					
 					if (Main.code.get(Main.index).get(1).equals(")")) {
 						Main.index++;
 						parsed = true;

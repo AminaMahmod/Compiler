@@ -43,7 +43,7 @@ public class Main {
 			g.prettyPrint();
 		}
 		else
-			System.out.println("Syntax Error");
+			System.out.println("Syntax Error at " + code.get(index).get(1)+"\t"+index);
 		
 		/*Identifier id = new Identifier() ;
 		System.out.println(id.parse());

@@ -1,9 +1,9 @@
 
 public class ExpressionPart {
 	// ExpressionPart -> Operator Expression | "[" Expression "]" | "." DotPart
-	private Operator op;
+	private Operator op = new Operator() ;
 	private Expression exp;
-	private DotPart dp;
+	private DotPart dp = new DotPart();
 
 	public boolean parse() {
 		System.out.println("exp part");

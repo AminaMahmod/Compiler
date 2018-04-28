@@ -16,6 +16,12 @@ public class ExpressionFinal {
 	public boolean parse()
 	{
 		System.out.println("exp final");
+		Operator op = new Operator(); 
+		if (Main.code.get(Main.index).get(1).equals("[") ||
+			Main.code.get(Main.index).get(1).equals(".") || op.parse() )
+		{
+			part = new ExpressionPart() ;
+		}
 		if(part==null)
 		{
 			return true;
