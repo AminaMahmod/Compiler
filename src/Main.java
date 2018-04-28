@@ -41,6 +41,11 @@ public class Main {
 			if (add)
 				code.add(tokensWords);
 		}
+	/*	ArrayList<String> eof = new ArrayList<String>();
+		eof.add("< EOF >");
+		eof.add("eof");
+		code.add(eof);
+*/
 		sc.close();
 		
 		

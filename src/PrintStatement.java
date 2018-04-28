@@ -22,6 +22,7 @@ public class PrintStatement extends Statement
 			{
 				if (Main.code.get(Main.index).get(1).equals(")"))
 				{
+
 					Main.index ++ ;
 					if (Main.code.get(Main.index).get(1).equals(";"))
 					{
