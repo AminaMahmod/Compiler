@@ -23,6 +23,7 @@ public class Main {
 		Scanner sc = null;
 		sc = new Scanner(inputFile);
 		while (sc.hasNextLine()) {
+			boolean add = true ;
 			String input = "";
 			input = sc.nextLine();
 			String[] words;
@@ -30,9 +31,15 @@ public class Main {
 			ArrayList<String> tokensWords = new ArrayList<String>();
 			for (int i = 0; i < words.length; i++) {
 				String word = words[i].trim();
+				if (word.equals("< EOL >"))
+				{
+					add = false ;
+					break;
+				}
 				tokensWords.add(word);
 			}
-			code.add(tokensWords);
+			if (add)
+				code.add(tokensWords);
 		}
 		sc.close();
 		

@@ -11,21 +11,23 @@ public class Type
 		super();
 		this.dataType = dataType;
 		this.arrPart = arrPart;
-		types.add("<STRING>");
-		types.add("<BOOLEAN>");
-		types.add("<INT>");
-		types.add("<CHARACTER>");
-		types.add("<FLOAT>");
+		types.add("< STRING >");
+		types.add("< BOOLEAN >");
+		types.add("< INT >");
+		types.add("< CHARACTER >");
+		types.add("< FLOAT >");
+		types.add("< VOID >");
 	}
 
 
 	public Type()
 	{
-		types.add("<STRING>");
-		types.add("<BOOLEAN>");
-		types.add("<INT>");
-		types.add("<CHARACTER>");
-		types.add("<FLOAT>");
+		types.add("< STRING >");
+		types.add("< BOOLEAN >");
+		types.add("< INT >");
+		types.add("< CHARACTER >");
+		types.add("< FLOAT >");
+		types.add("< VOID >");
 		
 	}
 	

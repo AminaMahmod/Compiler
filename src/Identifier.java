@@ -23,7 +23,7 @@ public class Identifier
 	public boolean parse()
 	{
 		System.out.println("id");
-		if (Main.code.get(Main.index).get(0).equals("<ID>"))
+		if (Main.code.get(Main.index).get(0).equals("< ID >"))
 		{
 			id = Main.code.get(Main.index).get(1);
 			Main.index++;

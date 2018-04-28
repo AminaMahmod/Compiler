@@ -8,11 +8,12 @@ public class ClassBody {
 	private static ArrayList<String> types = new ArrayList<>();
 
 	public ClassBody() {
-		types.add("<STRING>");
-		types.add("<BOOLEAN>");
-		types.add("<INT>");
-		types.add("<CHARACTER>");
-		types.add("<FLOAT>");
+		types.add("< STRING >");
+		types.add("< BOOLEAN >");
+		types.add("< INT >");
+		types.add("< CHARACTER >");
+		types.add("< FLOAT >");
+		types.add("< VOID >");
 
 	}
 
@@ -32,7 +33,7 @@ public class ClassBody {
 			if (types.contains(Main.code.get(Main.index).get(0)))
 				var = new VariableDeclaration();
 			if (var == null || var.parse() == true) {
-				if (Main.code.get(Main.index).get(0).equals("<ID>"))
+				if (Main.code.get(Main.index).get(0).equals("< ID >"))
 					cons = new ConstructorDeclaration();
 				if (cons == null || cons.parse() == true) {
 					if (Main.code.get(Main.index).get(1).equals("public")

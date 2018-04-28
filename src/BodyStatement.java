@@ -22,7 +22,7 @@ public class BodyStatement {
 			stmt = new Statement();
 		else if (Main.code.get(Main.index).get(1).equals("System.out.println"))
 			stmt = new Statement();
-		else if (Main.code.get(Main.index).get(0).equals("<ID>"))
+		else if (Main.code.get(Main.index).get(0).equals("< ID >"))
 			stmt = new Statement();
 		
 		 if(stmt.parse()){
@@ -30,7 +30,7 @@ public class BodyStatement {
 						Main.code.get(Main.index).get(1).equals("if")||
 						Main.code.get(Main.index).get(1).equals("while")||
 						Main.code.get(Main.index).get(1).equals("System.out.println")||
-						Main.code.get(Main.index).get(0).equals("<ID>")
+						Main.code.get(Main.index).get(0).equals("< ID >")
 				)
 				 bodystmt = new BodyStatement();
 			 if( bodystmt == null || bodystmt.parse() )

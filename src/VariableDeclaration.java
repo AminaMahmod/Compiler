@@ -12,20 +12,22 @@ public class VariableDeclaration {
 		this.type = type;
 		this.id = id;
 		this.var=var;
-		types.add("<STRING>");
-		types.add("<BOOLEAN>");
-		types.add("<INT>");
-		types.add("<CHARACTER>");
-		types.add("<FLOAT>");
+		types.add("< STRING >");
+		types.add("< BOOLEAN >");
+		types.add("< INT >");
+		types.add("< CHARACTER >");
+		types.add("< FLOAT >");
+		types.add("< VOID >");
 	}
 
 	public VariableDeclaration() {
 		super();
-		types.add("<STRING>");
-		types.add("<BOOLEAN>");
-		types.add("<INT>");
-		types.add("<CHARACTER>");
-		types.add("<FLOAT>");
+		types.add("< STRING >");
+		types.add("< BOOLEAN >");
+		types.add("< INT >");
+		types.add("< CHARACTER >");
+		types.add("< FLOAT >");
+		types.add("< VOID >");
 	}
 
 	public boolean parse() {

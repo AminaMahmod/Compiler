@@ -19,7 +19,7 @@ public class ConstructorDeclaration {
 
 	public boolean parse() {
 		System.out.println("constructor");
-		if (Main.code.get(Main.index).get(0).equals("<ID>")) 
+		if (Main.code.get(Main.index).get(0).equals("< ID >")) 
 		{
 			id = new Identifier();
 			par = new Parameters();
@@ -40,7 +40,7 @@ public class ConstructorDeclaration {
 									if (Main.code.get(Main.index).get(1).equals("}")) 
 									{
 										Main.index++;
-										if (Main.code.get(Main.index).get(0).equals("<ID>"))
+										if (Main.code.get(Main.index).get(0).equals("< ID >"))
 											cons = new ConstructorDeclaration();
 										if (cons == null || cons.parse()) 
 										{

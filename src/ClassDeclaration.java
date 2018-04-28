@@ -6,6 +6,7 @@ public class ClassDeclaration {
 	private boolean parsed= false;
 	
 	public boolean parse() {
+		
 		System.out.println("class declaration");
 		if (Main.code.get(Main.index).get(1).equals("class"))
 		{

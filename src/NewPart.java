@@ -10,11 +10,12 @@ public class NewPart {
 	private boolean parsed = false ;
 
 	NewPart() {
-		types.add("<STRING>");
-		types.add("<BOOLEAN>");
-		types.add("<INT>");
-		types.add("<CHARACTER>");
-		types.add("<FLOAT>");
+		types.add("< STRING >");
+		types.add("< BOOLEAN >");
+		types.add("< INT >");
+		types.add("< CHARACTER >");
+		types.add("< FLOAT >");
+		types.add("< VOID >");
 
 	}
 //DataType "[" Expression "]" |

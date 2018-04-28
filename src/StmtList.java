@@ -37,7 +37,7 @@ public class StmtList
 					Main.code.get(Main.index).get(1).equals("if")||
 					Main.code.get(Main.index).get(1).equals("while")||
 					Main.code.get(Main.index).get(1).equals("System.out.println")||
-					Main.code.get(Main.index).get(0).equals("<ID>"))
+					Main.code.get(Main.index).get(0).equals("< ID >"))
 					
 					list = new StmtList();
 			if (list == null ||list.parse())

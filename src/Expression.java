@@ -39,7 +39,7 @@ public class Expression
 				||Main.code.get(Main.index).get(1).equals("false")
 				||Main.code.get(Main.index).get(0).equals("<INTEGERAL_LITERAL>")
 				||Main.code.get(Main.index).get(0).equals("<FLOAT_LITERAL>")
-				||Main.code.get(Main.index).get(0).equals("<ID>")
+				||Main.code.get(Main.index).get(0).equals("< ID >")
 				||Main.code.get(Main.index).get(1).equals("!")
 				||Main.code.get(Main.index).get(1).equals("true")
 				||Main.code.get(Main.index).get(1).equals("("))
@@ -156,7 +156,7 @@ public class Expression
 				return true;
 			}
 		}
-		else if (Main.code.get(Main.index).get(0).equals("<INTEGERAL_LITERAL>"))
+		else if (Main.code.get(Main.index).get(0).equals("< INTEGERAL_LITERAL >"))
 		{
 			integer = Integer.parseInt(Main.code.get(Main.index).get(1));
 			Main.index++;
@@ -168,7 +168,7 @@ public class Expression
 				return true;
 			}
 		}
-		else if (Main.code.get(Main.index).get(0).equals("<FLOAT_LITERAL>"))
+		else if (Main.code.get(Main.index).get(0).equals("< FLOAT_LITERAL >"))
 		{
 			flt = Float.parseFloat(Main.code.get(Main.index).get(1));
 			Main.index++;
