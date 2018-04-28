@@ -58,7 +58,7 @@ public class VariableDeclaration {
 			if(type != null){
 				type.prettyPrint();
 				id.prettyPrint();
-				System.out.println(";");
+				System.out.println(";\n");
 				if(var != null)
 					var.prettyPrint();
 			}

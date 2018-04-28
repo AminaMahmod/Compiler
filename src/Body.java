@@ -58,8 +58,6 @@ public class Body {
 				var.prettyPrint();
 			if(bodystmt != null)
 				bodystmt.prettyPrint();
-			else
-				System.out.print(" ");
 		}
 		else
 			System.out.println("Check the syntax first");

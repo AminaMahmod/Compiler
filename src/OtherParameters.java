@@ -30,7 +30,7 @@ public class OtherParameters {
 		if (parsed)
 		{	
 			if (par != null) {
-				System.out.println(",");
+				System.out.println(" , ");
 				par.prettyPrint();
 			}
 		}

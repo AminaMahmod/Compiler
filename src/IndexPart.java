@@ -16,9 +16,9 @@ public class IndexPart
 		{
 			if (exp != null)
 			{
-				System.out.print("[");
+				System.out.print("[ ");
 				exp.prettyPrint();
-				System.out.print("]");
+				System.out.print(" ]");
 			}
 		}
 		else

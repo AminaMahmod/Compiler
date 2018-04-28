@@ -64,9 +64,9 @@ public class ConstructorDeclaration {
 		if (parsed) {
 			if (id != null) {
 				id.prettyPrint();
-				System.out.println("(");
+				System.out.println(" ( ");
 				par.prettyPrint();
-				System.out.println(")");
+				System.out.println(" ) ");
 				System.out.println("{");
 				body.prettyPrint();
 				System.out.println("}");
