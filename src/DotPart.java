@@ -3,12 +3,14 @@ public class DotPart {
 
 	// DotPart -> "length" | Identifier "(" NewExpression ")"
 
-	private Identifier id = new Identifier();
+	private Identifier id ;
 	private NewExpression newexp;
 	private boolean parsed = false;
 	
 	public boolean parse() {
 		System.out.println("dot");
+		if (!Main.code.get(Main.index).get(1).equals("length"))
+			id = new Identifier();
 		if(Main.code.get(Main.index).get(1).equals("length"))
 		{
 			Main.index++;
@@ -43,18 +45,18 @@ public class DotPart {
 		{
 			if(id==null)
 			{
-				System.out.println("length");
+				System.out.print("length");
 			}
 			else if(id!=null && newexp!=null)
 			{
 				id.prettyPrint();
-				System.out.println("(");
+				System.out.print("(");
 				newexp.prettyPrint();
-				System.out.println(")");
+				System.out.print(")");
 			}
 		}
-		else 
-			System.out.println("Check the syntax first");
+		//else 
+			//System.out.println("Check the syntax first");
 	}
 
 }

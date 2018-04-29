@@ -33,8 +33,8 @@ public class OtherExpressions {
 				newexp.prettyPrint();
 			}
 		}
-		else 
-			System.out.println("Check the syntax First");
+		//else 
+			//System.out.println("Check the syntax first");
 	}
 
 }

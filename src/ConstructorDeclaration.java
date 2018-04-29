@@ -79,10 +79,12 @@ public class ConstructorDeclaration {
 	public void prettyPrint() {
 		if (parsed) {
 			if (id != null) {
+				System.out.print(Main.printTabs(Main.tabsCounter));
 				id.prettyPrint();
-				System.out.println(" ( ");
-				par.prettyPrint();
-				System.out.println(" ) ");
+				System.out.print(" ( ");
+				if (par!=null)
+					par.prettyPrint();
+				System.out.print(" ) ");
 				Main.tabsCounter ++;
 				System.out.println("{");
 				System.out.println(Main.printTabs(Main.tabsCounter));
@@ -93,8 +95,8 @@ public class ConstructorDeclaration {
 				if (cons != null)
 					cons.prettyPrint();
 			}
-		} else
-			System.out.println("Check the syntax first");
+		}// else
+			//System.out.println("Check the syntax first");
 	}
 
 }

@@ -1,7 +1,7 @@
 public class Goal {
 
 	private MainClass main = new MainClass();
-	private OtherClasses classes = new OtherClasses();
+	private OtherClasses classes ;
 	private boolean parsed = false; 
 	
 	public Goal() {
@@ -20,13 +20,21 @@ public class Goal {
 			main = new MainClass() ;
 			if (main.parse())
 			{
+				if(Main.code.get(Main.index).get(0).equals("< EOF >"))
+				{
+					parsed = true ;
+					return true;
+				}
 				if (Main.code.get(Main.index).get(1).equals("class"))
 				{
 					classes = new OtherClasses() ;
 					if (classes.parse())
 					{
-						parsed = true ;
-						return true;
+						if(Main.code.get(Main.index).get(0).equals("< EOF >"))
+						{
+							parsed = true ;
+							return true;
+						}
 					}
 				}
 			}
@@ -37,10 +45,11 @@ public class Goal {
 		if (parsed)
 		{
 			main.prettyPrint();
-			classes.prettyPrint();
+			if (classes!=null)
+				classes.prettyPrint();
 		}
-		else
-			System.out.println("Check the syntax first");
+		//else
+			//System.out.println("Check the syntax first");
 	}
 
 

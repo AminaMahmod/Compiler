@@ -13,21 +13,24 @@ public class OtherClasses {
 					others.prettyPrint();
 			}
 		}
-		else
-			System.out.println("Check the syntax first");
+		//else
+			//System.out.println("Check the syntax first");
 			
 	}
 
 	public boolean parse()
 	{		
 		System.out.println("other classes");
-		//if(Main.code.get(Main.index).get(0).equals("< EOF >"))
-		//	return true;
+		if(Main.code.get(Main.index).get(0).equals("< EOF >"))
+		{
+			parsed = true ;
+			return true;
+		}
 		if (cd.parse()) 
 		{
 			if (Main.code.get(Main.index).get(1).equals("class"))
 				others = new OtherClasses() ;
-			if (others.parse() || others == null)
+			if ( others == null||others.parse() )
 			{
 				parsed = true ;
 				return true ;

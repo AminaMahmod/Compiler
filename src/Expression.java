@@ -63,7 +63,7 @@ public class Expression
 		
 			if(type=="this")
 			{	
-				System.out.print("this");
+				System.out.print("this ");
 				f.prettyPrint();
 			}
 			else if(type=="id")
@@ -73,12 +73,12 @@ public class Expression
 			}
 			else if(type=="false")
 			{
-				System.out.print("false");
+				System.out.print("false ");
 				f.prettyPrint();
 			}
 			else if (type=="true")
 			{
-				System.out.print("true");
+				System.out.print("true ");
 				f.prettyPrint();
 			}
 			else if(type=="int")
@@ -106,14 +106,14 @@ public class Expression
 			}
 			else if(type=="new")
 			{
-				System.out.println("new");
+				System.out.print("new ");
 				np.prettyPrint();
 				if (f!=null)
 					f.prettyPrint();
 			}
 		}
-		else 
-			System.out.println("Check the syntax first");
+		//else 
+			//System.out.println("Check the syntax first");
 	}
 
 	public boolean parse() 

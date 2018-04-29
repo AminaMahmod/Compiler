@@ -45,7 +45,7 @@ public class Parameters {
 		}
 		else
 		{
-			System.out.println("Check the syntax first");
+			//System.out.println("Check the syntax first");
 		}
 	}
 

@@ -40,14 +40,16 @@ public class WhileStatement extends Statement
 	{
 		if (parsed)
 		{
+			System.out.print(Main.printTabs(Main.tabsCounter));
 			System.out.print("while ( " );
 			exp.prettyPrint();
 			System.out.print(")\n");
+			System.out.print(Main.printTabs(Main.tabsCounter));
 			stmt.prettyPrint();
 		}
 		else
 		{
-			System.out.println("Check the syntax first");
+			//System.out.println("Check the syntax first");
 		}
 	}
 

@@ -23,8 +23,8 @@ public class NewExpression {
 			exp.prettyPrint();
 			if (otherexp != null)
 				otherexp.prettyPrint();
-		} else
-			System.out.println("Check the syntax first");
+		}// else
+			//System.out.println("Check the syntax first");
 	}
 
 }

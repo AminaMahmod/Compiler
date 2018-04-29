@@ -54,13 +54,14 @@ public class Body {
 	public void prettyPrint() {
 		if (parsed)
 		{
+			//System.out.print(Main.printTabs(Main.tabsCounter));
 			if(var != null)
 				var.prettyPrint();
 			if(bodystmt != null)
 				bodystmt.prettyPrint();
 		}
-		else
-			System.out.println("Check the syntax first");
+		//else
+			//System.out.println("Check the syntax first");
 	}
 
 }

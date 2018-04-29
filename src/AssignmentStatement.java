@@ -43,7 +43,8 @@ public class AssignmentStatement extends Statement
 	{
 		System.out.println("= stmt");
 		id = new Identifier();
-		id.setId(Main.code.get(Main.index).get(1));
+		Main.index -- ;
+		id.parse();
 		if (Main.code.get(Main.index).get(1).equals("["))
 			index = new IndexPart();
 		if (index == null || index.parse())
@@ -57,6 +58,7 @@ public class AssignmentStatement extends Statement
 					if (Main.code.get(Main.index).get(1).equals(";"))
 					{
 						Main.index++ ;
+						parsed = true ;
 						return true;
 					}
 				}
@@ -67,10 +69,16 @@ public class AssignmentStatement extends Statement
 	
 	public void prettyPrint()
 	{
-		id.prettyPrint();
-		index.prettyPrint();
-		System.out.print(" = ");
-		exp.prettyPrint();
+		if (parsed)
+		{
+			System.out.print(Main.printTabs(Main.tabsCounter));
+			id.prettyPrint();
+			if (index != null)
+				index.prettyPrint();
+			System.out.print(" = ");
+			exp.prettyPrint();
+			System.out.println(";");
+		}
 	}
 
 }

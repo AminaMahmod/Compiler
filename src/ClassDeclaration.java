@@ -32,13 +32,14 @@ public class ClassDeclaration {
 	public void prettyPrint() {
 		if(parsed)
 		{
-			System.out.println("class ");
+			System.out.print("class ");
 			className.prettyPrint();
-			ep.prettyPrint();
+			if (ep != null)
+				ep.prettyPrint();
 			cb.prettyPrint();
 		}
-		else 
-			System.out.println("Check the syntax first");
+		//else 
+			//System.out.println("Check the syntax first");
 	}
 
 	

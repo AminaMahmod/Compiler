@@ -18,12 +18,17 @@ public class ElsePart
 		{
 			if (stmt != null)
 			{
+				System.out.print(Main.printTabs(Main.tabsCounter));
 				System.out.println("else");
+				if (!stmt.getClass().equals("BodyStatement"))
+					Main.tabsCounter++;
 				stmt.prettyPrint();
+				if (!stmt.getClass().equals("BodyStatement"))
+					Main.tabsCounter--;
 			}
 		}
-		else 
-			System.out.println("Check the syntax first");
+		//else 
+			//System.out.println("Check the syntax first");
 	}
 
 	public boolean parse() {

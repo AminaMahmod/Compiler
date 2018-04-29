@@ -38,8 +38,8 @@ public class AccessModifier {
 	public void prettyPrint()
 	{
 		if (parsed)
-			System.out.print(modifier);
-		else
-			System.out.println("Check the syntax first");
+			System.out.print(modifier+" ");
+		//else
+			//System.out.println("Check the syntax first");
 	}
 }

@@ -97,29 +97,30 @@ public class MethodDeclaration {
 		{
 			if (acsss != null)
 			{
+				System.out.print(Main.printTabs(Main.tabsCounter));
 				acsss.prettyPrint();
 				type.prettyPrint();
 				id.prettyPrint();
-				System.out.println(" ( ");
-				par.prettyPrint();
-				System.out.println(" ) ");
-				System.out.println("{\n");
+				System.out.print(" ( ");
+				if (par !=null)
+					par.prettyPrint();
+				System.out.print(" ) ");
+				System.out.println("\n"+Main.printTabs(Main.tabsCounter)+"{");
 				Main.tabsCounter++;
-				System.out.print(Main.printTabs(Main.tabsCounter) );
+				//System.out.print(Main.printTabs(Main.tabsCounter) );
 				body.prettyPrint();
-				System.out.print(Main.printTabs(Main.tabsCounter) );
-				System.out.println("\nreturn");
+				System.out.print("\n"+Main.printTabs(Main.tabsCounter)+"return ");
 				exp.prettyPrint();
 				System.out.println(" ;");
 				Main.tabsCounter--;
 				System.out.print(Main.printTabs(Main.tabsCounter) );
-				System.out.println("\n}");
+				System.out.println("}");
 				if (method !=null)
 					method.prettyPrint();
 			}
 		}
-		else 
-			System.out.println("Check the syntax first");
+		//else 
+			//System.out.println("Check the syntax first");
 	}
 
 }

@@ -49,18 +49,17 @@ public class Main {
 			if (add)
 				code.add(tokensWords);
 		}
-	/*	ArrayList<String> eof = new ArrayList<String>();
+		ArrayList<String> eof = new ArrayList<String>();
 		eof.add("< EOF >");
 		eof.add("eof");
 		code.add(eof);
-*/
+
 		sc.close();
 		
 		
 		Goal g = new Goal();
-	//	System.out.println("goaaaaaaaaaaaaaaaaaaaaaaaaaaaaal "+g.parse());
 
-	if(g.parse())
+		if(g.parse())
 		{
 			g.prettyPrint();
 		}

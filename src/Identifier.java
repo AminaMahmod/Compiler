@@ -36,8 +36,8 @@ public class Identifier
 	public void prettyPrint() {
 		if (parsed)
 			System.out.print(id);
-		else
-			System.out.println("Check the syntax first");
+		//else
+			//System.out.println("Check the syntax first");
 	}
 
 }

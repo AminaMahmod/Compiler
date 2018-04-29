@@ -21,8 +21,8 @@ public class IndexPart
 				System.out.print(" ]");
 			}
 		}
-		else
-			System.out.println("Check the syntax first");
+		//else
+			//System.out.println("Check the syntax first");
 	}
 
 	public boolean parse() {

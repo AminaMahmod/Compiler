@@ -37,6 +37,7 @@ public class PrintStatement extends Statement
 		
 	public void prettyPrint()
 	{
+		System.out.print(Main.printTabs(Main.tabsCounter));
 		System.out.print("System.out.Println(");
 		exp.prettyPrint();
 		System.out.println(");");

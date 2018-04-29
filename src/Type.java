@@ -36,13 +36,13 @@ public class Type
 	{
 		if (parsed)
 		{
-			System.out.print(dataType);
+			System.out.print(dataType+" ");
 			if (arrPart != null)
 				arrPart.prettyPrint();
 		}
 		else
 		{
-			System.out.println("Check the syntax first");
+			//System.out.println("Check the syntax first");
 		}
 	}
 	

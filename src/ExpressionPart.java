@@ -1,14 +1,30 @@
 
 public class ExpressionPart {
 	// ExpressionPart -> Operator Expression | "[" Expression "]" | "." DotPart
-	private Operator op = new Operator();
+	private Operator op;
 	private Expression exp;
 	private DotPart dp;
 	private boolean parsed = false;
 
+	public boolean initFinalOperator() {
+		if (Main.code.get(Main.index).get(1).equals("&&") || Main.code.get(Main.index).get(1).equals("||")
+				|| Main.code.get(Main.index).get(1).equals("==") || (Main.code.get(Main.index).get(1).equals("!")&&Main.code.get(Main.index+1).get(1).equals("="))
+				|| Main.code.get(Main.index).get(1).equals("+") || Main.code.get(Main.index).get(1).equals("-")
+				|| Main.code.get(Main.index).get(1).equals("*") || Main.code.get(Main.index).get(1).equals("/")
+				|| Main.code.get(Main.index).get(1).equals(">") || Main.code.get(Main.index).get(1).equals("<")
+				|| Main.code.get(Main.index).get(1).equals(">=") || Main.code.get(Main.index).get(1).equals("<="))
+				{
+			return true;
+		}
+		return false;
+	}
+
+	
 	public boolean parse() {
 		System.out.println("exp part");
 
+		if (initFinalOperator())
+			op = new Operator();
 		if (Main.code.get(Main.index).get(1).equals(".")) {
 			Main.index++;
 			dp = new DotPart();
@@ -27,6 +43,7 @@ public class ExpressionPart {
 				}
 			}
 		} else if (op.parse() == true) {
+		
 			exp = new Expression() ;
 			if (exp.parse() == true) {
 				parsed = true;
@@ -38,19 +55,21 @@ public class ExpressionPart {
 
 	public void prettyPrint() {
 		if (parsed) {
-			if (exp != null) {
-				System.out.println("[");
-				exp.prettyPrint();
-				System.out.println("]");
-			} else if (dp != null) {
-				System.out.println(".");
+			 if (op != null) {
+					op.prettyPrint();
+					exp.prettyPrint();
+				}
+			 else if (exp != null) {
+					System.out.print("[");
+					exp.prettyPrint();
+					System.out.print("]");
+				}
+			else if (dp != null) {
+				System.out.print(".");
 				dp.prettyPrint();
-			} else if (op != null) {
-				op.prettyPrint();
-				exp.prettyPrint();
 			}
 		}
-		else 
-			System.out.println("Check the syntax first");
+		//else 
+			//System.out.println("Check the syntax first");
 	}
 }

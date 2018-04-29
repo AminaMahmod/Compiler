@@ -22,17 +22,21 @@ public class ClassBody {
 			Main.tabsCounter++;
 			System.out.println("\n{\n");
 			System.out.println(Main.printTabs(Main.tabsCounter));
-			var.prettyPrint();
-			cons.prettyPrint();
-			method.prettyPrint();
+			if (var!=null)
+				var.prettyPrint();
+			if (cons != null)
+				cons.prettyPrint();
+			if (method !=null)
+				method.prettyPrint();
 			Main.tabsCounter --;
 			System.out.println(Main.printTabs(Main.tabsCounter));
 
 			System.out.println("\n}\n");
 
 
-		} else
-			System.out.println("Check the syntax first");
+		}
+		//else
+			//System.out.println("Check the syntax first");
 	}
 
 	public boolean parse() {

@@ -1,13 +1,13 @@
 public class Statement {
 
 	private Statement stmt ;
-	private boolean parsed = false;
+	protected boolean parsed = false;
 	
 	public void prettyPrint() {
 		if (parsed)
 			stmt.prettyPrint(); 
-		else
-			System.out.println("Check the syntax first");
+		//else
+			//System.out.println("Check the syntax first");
 	}
 
 	public boolean parse() 

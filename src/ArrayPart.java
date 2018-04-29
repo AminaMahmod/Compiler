@@ -5,8 +5,8 @@ public class ArrayPart {
 	public void prettyPrint() {
 		if (parsed)
 			System.out.print("[]");
-		else
-			System.out.println("Check the syntax first");
+		//else
+			//System.out.println("Check the syntax first");
 	}
 
 	public boolean parse() {

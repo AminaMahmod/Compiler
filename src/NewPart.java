@@ -64,10 +64,10 @@ public class NewPart {
 		{
 			if(exp!=null)
 			{
-				System.out.println(dataType);
-				System.out.println("[");
+				System.out.print(dataType);
+				System.out.print("[");
 				exp.prettyPrint();
-				System.out.println("]");
+				System.out.print("]");
 			}
 			else if(newexp!=null)
 			{
@@ -77,5 +77,7 @@ public class NewPart {
 				System.out.println(")");
 			}		
 		}
+		//else
+			//System.out.println("Check the syntax first");
 	}
 }

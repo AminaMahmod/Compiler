@@ -20,13 +20,14 @@ public class ExpressionFinal {
 
 	public void prettyPrint() {
 		if (parsed) {
+			
 			if (part != null) {
 				part.prettyPrint();
 				if (f != null)
 					f.prettyPrint();
 			}
-		} else
-			System.out.println("Check the syntax first");
+		}// else
+			//System.out.println("Check the syntax first");
 	}
 
 	public boolean parse() {

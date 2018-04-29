@@ -52,6 +52,11 @@ public class MainClass {
 																		if (Main.code.get(Main.index).get(1)
 																				.equals("}")) {
 																			Main.index++;
+																			if(Main.code.get(Main.index).get(0).equals("< EOF >"))
+																			{
+																				parsed = true;
+																				return true;
+																			}
 																			parsed = true;
 																			return true;
 																		}
@@ -91,13 +96,13 @@ public class MainClass {
 			System.out.println(Main.printTabs(Main.tabsCounter) );
 			stmt.prettyPrint(); 
 			Main.tabsCounter--;
-			System.out.println(Main.printTabs(Main.tabsCounter) );
-			System.out.println("\n}");
+			System.out.print(Main.printTabs(Main.tabsCounter) );
+			System.out.println("}");
 			Main.tabsCounter --;
-			System.out.println(Main.printTabs(Main.tabsCounter) );
+			System.out.print(Main.printTabs(Main.tabsCounter) );
 			System.out.println("\n}");
 		}
-		else 
-			System.out.println("Check the syntax first");
+		//else 
+			//System.out.println("Check the syntax first");
 	}
 }

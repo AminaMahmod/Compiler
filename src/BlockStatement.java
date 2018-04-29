@@ -45,12 +45,12 @@ public class BlockStatement  extends Statement
 			System.out.println(Main.printTabs(Main.tabsCounter));
 			stmtList.prettyPrint(); 
 			Main.tabsCounter --;
-			System.out.println(Main.printTabs(Main.tabsCounter));
-			System.out.println("}");
+			System.out.print(Main.printTabs(Main.tabsCounter));
+			System.out.print("}\n");
 			
 		}
-		else
-			System.out.println("Check the syntax first");
+		//else
+			//System.out.println("Check the syntax first");
 	}
 	
 }

@@ -52,7 +52,7 @@ public class BodyStatement {
 					bodystmt.prettyPrint();
 			}
 		}
-		System.out.println("Check the syntax first");
+		//System.out.println("Check the syntax first");
 	}
 
 }

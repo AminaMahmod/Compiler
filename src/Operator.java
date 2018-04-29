@@ -7,9 +7,7 @@ public class Operator {
 	
 	public boolean parse() {
 		System.out.println("operator");
-		System.out.println("beeeeeeeeeeeeeeeeeeeep");
 		System.out.println(Main.code.get(Main.index).get(1).equals("!") && Main.code.get(Main.index+1).get(1).equals("="));
-		System.out.println("beeeeeeeeeeeeeeeeeeeep");
 		if(Main.code.get(Main.index).get(1).equals("&&"))
 		{
 			opt = "&&" ;
@@ -99,11 +97,10 @@ public class Operator {
 	}
 
 	public void prettyPrint() {
-		
 		if (parsed)
 			System.out.print(opt);
-		else
-			System.out.println("Check the Syntax First");
+//		else
+			//System.out.println("Check the syntax first");
 	}
 
 }

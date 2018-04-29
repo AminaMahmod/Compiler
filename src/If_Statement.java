@@ -51,15 +51,21 @@ public class If_Statement extends Statement
 	{
 		if (parsed)
 		{
+			System.out.print(Main.printTabs(Main.tabsCounter));
 			System.out.print("if ( ");
 			exp.prettyPrint();
-			System.out.println(" )");
+			System.out.print(" )\n");
+			if (!stmt.getClass().equals("BodyStatement"))
+				Main.tabsCounter++;
 			stmt.prettyPrint();
-			ePart.prettyPrint();
+			if (!stmt.getClass().equals("BodyStatement"))
+				Main.tabsCounter--;
+			if (ePart!=null)
+				ePart.prettyPrint();
 		}
 		else
 		{
-			System.out.println("Check the syntax first");
+			//System.out.println("Check the syntax first");
 		}
 	}
 }

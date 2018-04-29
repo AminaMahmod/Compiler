@@ -56,6 +56,7 @@ public class VariableDeclaration {
 		if (parsed)
 		{
 			if(type != null){
+				System.out.print(Main.printTabs(Main.tabsCounter));
 				type.prettyPrint();
 				id.prettyPrint();
 				System.out.println(";\n");
@@ -65,7 +66,7 @@ public class VariableDeclaration {
 		}
 		else
 		{
-			System.out.println("Check the syntax first");
+			//System.out.println("Check the syntax first");
 		}
 	}
 	
